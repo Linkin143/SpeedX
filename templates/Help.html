@@ -176,7 +176,7 @@
     <!-- Quick Contact start------------------------------------------------------------------- -->
     <div class="quick-contact-main-container">
         <div class="quick-inner-container">
-            <form id="QuickContact" action="/sentemail" method="post">
+            <form id="QuickContact" action="/api/contact" method="post">
                 <h3>Quick Contact</h3>
                 <h4>Contact us today, and get reply with in 24 hours!</h4>
                 <fieldset>
@@ -194,12 +194,13 @@
           <fieldset> -->
                 <textarea placeholder="Type your Message Here...." name="message" tabindex="5" required></textarea>
                 </fieldset>
+                <h6 id="status-contact" style="color: red;">asdf</h6>
                 <fieldset>
                     <button name="submit" type="submit" id="QuickContact-submit"
                         data-submit="...Sending">Submit</button>
                 </fieldset>
             </form>
-
+            
 
         </div>
     </div>
