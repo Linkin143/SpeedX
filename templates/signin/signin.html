@@ -58,23 +58,27 @@
               <img src="images/SignInImg1.jpg" alt="" style="width: 700px;" />
             </div>
             <div class="cont_form_login">
-              <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+              <a onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
               <h2>LOGIN</h2>
-              <input type="number text" placeholder="Email or Mobile No." />
-              <input type="password" placeholder="Password" />
-              <a href="">Forgot Password</a>
-              <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+              <form>
+                <input type="text" id="emailLogin" placeholder="Email or Mobile No." />
+                <input type="password" id="passLogin" placeholder="Password" />
+                <a href="api/users/forgot">Forgot Password</a>
+                <button class="btn_login" type="submit">LOGIN</button>
+              </form>
             </div>
 
             <div class="cont_form_sign_up">
-              <a href="#" onclick="ocultar_login_sign_up()"Email or Mobile No.><i class="material-icons">&#xE5C4;</i></a>
+              <a onclick="ocultar_login_sign_up()"Email or Mobile No.><i class="material-icons">&#xE5C4;</i></a>
               <h2>SIGN UP</h2>
-              <input type="number text" placeholder="Email or Mobile No." />
-              <input type="text" placeholder="Username" />
-              <input type="password" placeholder="Password" />
-              <input type="password" placeholder="Confirm Password" />
-              <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
-
+              <form>
+              <input type="text" id="EmailSignup" placeholder="Email" />
+              <input type="text" id="phoneSignup" placeholder="Mobile No." />
+              <input type="text" id="usernameSignup" placeholder="Username" />
+              <input type="password" id="passSignup" placeholder="Password" />
+              <input type="password" id="c-passSignup" placeholder="Confirm Password" />
+              <button class="btn_sign_up" type="submit">SIGN UP</button>
+            </form>
             </div>
 
           </div>
@@ -82,8 +86,10 @@
         </div>
       </div>
     </div>
-
-    <script src="static/signin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script src="signin.js"></script>
+    <script src="login.js"></script>
+    <script src="signup.js"></script>
 
   </body>
 
