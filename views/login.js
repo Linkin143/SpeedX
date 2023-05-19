@@ -13,10 +13,16 @@
                 password
             }
         })
-        window.location.href = "/";
         console.log(res)
+        setInterval(function() {
+          window.location.href = "/";
+        }, 1000);
+        
+        console.log(res.data);
+          $('#errorshowLogin').text('Successfully Loggedin')
     }catch(err){
-        console.log(err.response.data)
+      console.log(err.response.data);
+      $('#errorshowLogin').text(err.response.data.error);
     }
 }
 

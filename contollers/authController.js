@@ -58,25 +58,27 @@ exports.signup = async (req, res, next) => {
   }
 };
 
-
 exports.login = async (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return next(new AppError('Please provide email and password!', 400));
+    return res.status(400).json({ error: 'Please provide email and password!' });
   }
 
   const user = await User.findOne({ email }).select('+password');
 
   if (!user || !(await user.correctPassword(password, user.password))) {
-    return next(new AppError('Incorrect email or password', 401));
+    return res.status(401).json({ error: 'Incorrect email or password' });
   }
 
-  const token = signToken(user._id)
+  const token = signToken(user._id);
 
+  // Assuming createSendToken sends the token in the response
   createSendToken(user, 200, res);
-  res.status(200)
+  // Alternatively, you can directly send the token in the response:
+  // res.status(200).json({ token });
 };
+
 
 
 exports.logout = (req, res) => {
