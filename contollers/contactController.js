@@ -33,7 +33,7 @@ exports.contact = async  (req, res) => {
         if (error) {
             console.log(error);
         } else {
-            res.send(`<script>alert("Email Sent Successfully.")</script>`);
+            res.send(`<script>window.location.href = "/help";</script>`);
             console.log("email sent: " + info);
         }
     });

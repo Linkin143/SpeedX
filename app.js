@@ -8,18 +8,41 @@ dotenv.config({path: './config.env'});
 const bodyParser = require('body-parser')
 const contactController = require('./contollers/contactController')
 const usersRouter = require('./routing/userRoute')
+const pageRouter = require('./routing/pageRoute')
+const authController = require('./contollers/authController')
+const cookieParser = require('cookie-parser')
+const user = require('./contollers/authController')
+
+app.use(express.json());
+app.use(cookieParser());
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname, 'static')));
 app.use(express.static(path.join(__dirname, 'utils')));
+app.use(express.static(path.join(__dirname, 'views')));
 
+app.use((req, res , next) => {
+    req.requestTime = new Date().toISOString();
+    console.log(req.cookies)
+    next()
+})
+
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+
+app.get('/',authController.isLoggedIn, pageRouter.index)
 
 app.post('/api/contact', contactController.contact)
 
 app.use('/api/users', usersRouter);
 
+app.get('/signin',authController.isLoggedIn, pageRouter.signup)
+app.get('/about', pageRouter.about)
+app.get('/help', pageRouter.help)
+app.get('/myprofile',authController.protect, pageRouter.myprofile)
+app.get('/service', pageRouter.service)
 
 // When the Route is not There
 // app.all('*', (req, res, next) => {

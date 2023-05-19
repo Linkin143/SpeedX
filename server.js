@@ -5,6 +5,7 @@ const port = 3000
 dotenv.config({path: './config.env'});
 const express = require('express');
 const path = require('path')
+const pageRouter = require('./routing/pageRoute')
 
 
 
@@ -14,41 +15,9 @@ const DB = process.env.DATABASE.replace(
 );
 
 
-mongoose.connect(DB, {
-}).then(() => console.log("Connected to the DataBase 🧬"));
-
-
-app.get('/', function(req, res) {
-  const filePath = path.join(__dirname, 'templates', 'index.html');
-  res.sendFile(filePath);
-});
-
-app.get('/signin', function(req, res) {
-  const filePath = path.join(__dirname, 'templates','signin', 'signin.html');
-  res.sendFile(filePath);
-});
-
-app.get('/about', function(req, res) {
-  const filePath = path.join(__dirname, 'templates', 'AboutUs.html');
-  res.sendFile(filePath);
-});
-
-
-app.get('/help', function(req, res) {
-  const filePath = path.join(__dirname, 'templates', 'Help.html');
-  res.sendFile(filePath);
-});
-
-app.get('/myprofile', function(req, res) {
-  const filePath = path.join(__dirname, 'templates', 'MyProfile.html');
-  res.sendFile(filePath);
-});
-
-app.get('/service', function(req, res) {
-  const filePath = path.join(__dirname, 'templates', 'service.html');
-  res.sendFile(filePath);
-});
-
+mongoose.connect(DB, {})
+  .then(() => console.log("Connected to the DataBase 🧬"))
+  .catch((err) => console.log(err));
 
 
 app.listen(port, () => {

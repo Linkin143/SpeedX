@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="speedx.css">
     <link rel="stylesheet" href="speedx.scss">
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </head>
 
@@ -70,7 +70,13 @@
             <div class="profile-submenu">
                 <div class="profile-userinfo">
                     <img src="images/userImage.png" alt="">
-                    <h2>Prince Kumar</h2>
+                    <% if (user) { %>
+                        <h1>Welcome, <%= user.name %></h1>
+                        <!-- Display other user properties as needed -->
+                      <% } else { %>
+                        <h1>Welcome, Guest</h1>
+                        <!-- Display a default message or empty values -->
+                      <% } %>
                 </div>
                 <hr>
 
@@ -84,11 +90,11 @@
                     <p>Help & Support</p>
                     <span>></span>
                 </a>
-                <a href="#" class="profile-submenu-link">
+                <button class="profile-submenu-link" onclick="logout()">
                     <img src="images/logoutImage.png" alt="">
-                    <p>Log Out</p>
+                    <p id="logout-user" >Log Out</p>
                     <span>></span>
-                </a>
+                </button>
 
             </div>
         </div>
@@ -758,7 +764,9 @@
 
         <!-- Footer End  -->
 
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="login.js"></script>
         <script src="speedx.js"></script>
 
 </body>
