@@ -1,9 +1,3 @@
-const express = require('express');
-const app = express();
-const authController = require('./../contollers/authController')
-const path = require('path')
-const router = express.Router(); 
-
 exports.index = function(req, res) {
   const user = res.locals.user;
   res.render('index', { user });

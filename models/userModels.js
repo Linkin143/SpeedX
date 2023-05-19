@@ -21,6 +21,9 @@ const userSchema = new mongoose.Schema(
             minlength: 10,
             maxlength: 13,
         },
+        address: {
+            type: String,
+        },
         password: {
             type: String,
             required: [true, 'Password Should be there! and should be between 8 to 15 chars'],

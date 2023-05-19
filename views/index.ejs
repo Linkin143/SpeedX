@@ -56,14 +56,14 @@
             <li><a href="/help">Help</a></li>
 
             <li><a href="#"></a></li>
-
-            <li class="home-signIn" id="Signin-id"><a href="/signin">Log&nbsp;In/Sign&nbsp;Up</a></li>
-
-
-            <li class="profile" id="profile-id"><a href="#">
+            <% if (user) { %>
+                <li class="profile" id="profile-id"><a href="#">
                     <img src="images/userImage.png" alt="lol" onclick="toggleMenu()">
                 </a>
             </li>
+              <% } else { %>
+                <li class="home-signIn" id="Signin-id"><a href="/signin">Log&nbsp;In/Sign&nbsp;Up</a></li>
+              <% } %>
         </ul>
         <!-- code for side profile  -->
         <div class="profile-submenu-wrap" id="subMenu">
