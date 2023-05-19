@@ -14,18 +14,18 @@ exports.index = function(req, res) {
   
   exports.about =  function(req, res) {
     const user = res.locals.user;
-    res.render('aboutus', { user });
+    res.render('AboutUs', { user });
   };
   
   
   exports.help =  function(req, res) {
     const user = res.locals.user;
-    res.render('help', { user });
+    res.render('Help', { user });
   };
   
   exports.myprofile = function(req, res) {
     const user = res.locals.user;
-    res.render('myprofile', { user });
+    res.render('MyProfile', { user });
   };
   
   exports.service = function(req, res) {
