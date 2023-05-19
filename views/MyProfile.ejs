@@ -33,7 +33,7 @@
             <img src="images/userImage.png" alt="" width="100" height="100">
 
             <div class="name">
-                Arjun Wagh
+                <%= user.name %>
             </div>
             
         </div>
@@ -79,22 +79,22 @@
                         <tr>
                             <td>Name</td>
                             <td>:</td>
-                            <td>ImDezCode</td>
+                            <td><%= user.name %></td>
                         </tr>
                         <tr>
                             <td>Email</td>
                             <td>:</td>
-                            <td>imdezcode@gmail.com</td>
+                            <td><%= user.email %></td>
                         </tr>
                         <tr>
                             <td>Address</td>
                             <td>:</td>
-                            <td>Bali, Indonesia</td>
+                            <td><%= user.address %></td>
                         </tr>
                         <tr>
                             <td>Phone</td>
                             <td>:</td>
-                            <td>9830049820</td>
+                            <td><%= user.phone %></td>
                         </tr>
 
                     </tbody>

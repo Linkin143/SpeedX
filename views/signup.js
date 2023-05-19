@@ -11,10 +11,18 @@ const signupData = async (email, phone, password, name, confirmPassword) => {
         confirmPassword
       }
     });
-    window.location.href = "/signin";
+    setInterval(function() {
+      window.location.href = "/";
+    }, 3000);
+    
     console.log(res.data);
+      $('#errorshowSignup').text('Successfully Registered')
   } catch (err) {
-    console.log(err.response.data);
+      data = err.response.data.message
+      parts = data.split(",")
+      error = parts[0]
+      console.log(err.response.data.message);
+      $('#errorshowSignup').text(error)
   }
 };
 

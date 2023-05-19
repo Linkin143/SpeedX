@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <body>
     <div class="cotn_principal">
       <div class="cont_centrar">
@@ -61,9 +61,10 @@
               <a onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
               <h2>LOGIN</h2>
               <form>
-                <input type="text" id="emailLogin" placeholder="Email or Mobile No." />
-                <input type="password" id="passLogin" placeholder="Password" />
+                <input type="text" class="inputfeilds"  id="emailLogin" placeholder="Email or Mobile No." />
+                <input type="password" class="inputfeilds"  id="passLogin" placeholder="Password" />
                 <a href="api/users/forgot">Forgot Password</a>
+                <h5 style="color: red;" id="errorshowLogin"></h5>
                 <button class="btn_login" type="submit">LOGIN</button>
               </form>
             </div>
@@ -72,11 +73,12 @@
               <a onclick="ocultar_login_sign_up()"Email or Mobile No.><i class="material-icons">&#xE5C4;</i></a>
               <h2>SIGN UP</h2>
               <form>
-              <input type="text" id="EmailSignup" placeholder="Email" />
-              <input type="text" id="phoneSignup" placeholder="Mobile No." />
-              <input type="text" id="usernameSignup" placeholder="Username" />
-              <input type="password" id="passSignup" placeholder="Password" />
-              <input type="password" id="c-passSignup" placeholder="Confirm Password" />
+              <input type="text" class="inputfeilds" id="EmailSignup" placeholder="Email" />
+              <input type="text" class="inputfeilds"  id="phoneSignup" placeholder="Mobile No." />
+              <input type="text" class="inputfeilds"  id="usernameSignup" placeholder="Username" />
+              <input type="password" class="inputfeilds"  id="passSignup" placeholder="Password" />
+              <input type="password" class="inputfeilds"  id="c-passSignup" placeholder="Confirm Password" />
+              <h5 id="errorshowSignup"></h5>
               <button class="btn_sign_up" type="submit">SIGN UP</button>
             </form>
             </div>
@@ -86,11 +88,12 @@
         </div>
       </div>
     </div>
+    <script>console.log(user.name)</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
     <script src="signin.js"></script>
+    <script src="logout.js"></script>
     <script src="login.js"></script>
     <script src="signup.js"></script>
-
   </body>
 
 

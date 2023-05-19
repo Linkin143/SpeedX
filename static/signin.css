@@ -86,7 +86,7 @@ transition: all 0.5s;
 
 .cont_forms_active_sign_up {
 box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
-  height: 420px;  
+height: 500px;  
 top:20px;
 left:320px;
 -webkit-transition: all 0.5s;
@@ -358,4 +358,19 @@ font-weight: 400;
     float: left;
     margin: 10px;
 margin-left: 30px;
+}
+
+.inputfeilds{
+  text-align: left;
+  padding: 15px 5px;
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 260px;
+  border: none;
+  color: #757575;
+}
+
+#errorshowSignup{
+  color: red;
+  padding: 10px 0;
 }
