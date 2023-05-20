@@ -2,6 +2,7 @@ const User = require('./../models/userModels')
 const AppError = require('./../utils/apperror')
 const jwt = require('jsonwebtoken')
 const { promisify } = require('util');
+const email = require('./../utils/email')
 
 const signToken = id => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -33,7 +34,7 @@ const createSendToken = (user, statusCode, res) => {
 exports.signup = async (req, res, next) => {
   try {
     const newUser = await User.create(req.body);
-
+    await new email(newUser).registered();
     const token = signToken(newUser._id)
 
     res.status(201).json({
@@ -43,20 +44,15 @@ exports.signup = async (req, res, next) => {
         user: newUser,
       },
     });
+
   } catch (error) {
-    if (error.name === 'ValidationError') {
-      res.status(400).json({
-        status: 'fail',
-        message: error.message,
-      });
-    } else {
-      res.status(500).json({
-        status: 'error',
-        message: error.message,
-      });
-    }
+    res.status(error.name === 'ValidationError' ? 400 : 500).json({
+      status: 'fail',
+      message: error.message,
+    });
   }
 };
+
 
 exports.login = async (req, res, next) => {
   const { email, password } = req.body;

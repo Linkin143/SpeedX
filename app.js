@@ -8,6 +8,7 @@ dotenv.config({path: './config.env'});
 const bodyParser = require('body-parser')
 const contactController = require('./contollers/contactController')
 const usersRouter = require('./routing/userRoute')
+const bookingsRouter = require('./routing/bookingRoute')
 const pageRouter = require('./routing/pageRoute')
 const authController = require('./contollers/authController')
 const cookieParser = require('cookie-parser')
@@ -37,6 +38,7 @@ app.get('/',authController.isLoggedIn, pageRouter.index)
 app.post('/api/contact', contactController.contact)
 
 app.use('/api/users', usersRouter);
+app.use('/api/bookings', bookingsRouter);
 
 app.get('/signin',authController.isLoggedIn, pageRouter.signup)
 app.get('/about', pageRouter.about)
@@ -45,12 +47,12 @@ app.get('/myprofile',authController.protect, pageRouter.myprofile)
 app.get('/service', pageRouter.service)
 
 // When the Route is not There
-// app.all('*', (req, res, next) => {
-//     const err = new AppError(`Can't find ${req.originalUrl} on this server!`, 404);
-//     err.status = 'fail';
-//     err.statusCode = 404;
-//     next(err);
-// });
+app.all('*', (req, res, next) => {
+    const err = new AppError(`Can't find ${req.originalUrl} on this server!`, 404);
+    err.status = 'fail';
+    err.statusCode = 404;
+    next(err);
+});
 
 
 console.log(__dirname);

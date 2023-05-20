@@ -1,8 +1,4 @@
-const express = require('express');
-const bodyParser = require('body-parser')
-const path = require('path')
 const nodemailer = require('nodemailer')
-const app = express();
 
 exports.contact = async  (req, res) => {
     email = req.body.email

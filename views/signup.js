@@ -31,6 +31,7 @@ const signupData = async (email, phone, password, name, confirmPassword) => {
 const signupSubmit = document.querySelector('.cont_form_sign_up');
 signupSubmit.addEventListener('submit', e => {
   e.preventDefault();
+  $('#errorshowSignup').text('Loading please wait!')
   console.log("hi from the signupSubmit event listener");
   const email = document.getElementById('EmailSignup').value;
   const phone = document.getElementById('phoneSignup').value;
