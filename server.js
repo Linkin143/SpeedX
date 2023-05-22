@@ -1,7 +1,8 @@
+// jshint esversion:6
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const app = require('./app');
-const port = 3000
+const port = 8000
 dotenv.config({path: './config.env'});
 const express = require('express');
 const path = require('path')

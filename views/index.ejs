@@ -58,12 +58,12 @@
             <li><a href="#"></a></li>
             <% if (user) { %>
                 <li class="profile" id="profile-id"><a href="#">
-                    <img src="images/userImage.png" alt="lol" onclick="toggleMenu()">
-                </a>
-            </li>
-              <% } else { %>
-                <li class="home-signIn" id="Signin-id"><a href="/signin">Log&nbsp;In/Sign&nbsp;Up</a></li>
-              <% } %>
+                        <img src="images/userImage.png" alt="lol" onclick="toggleMenu()">
+                    </a>
+                </li>
+                <% } else { %>
+                    <li class="home-signIn" id="Signin-id"><a href="/signin">Log&nbsp;In/Sign&nbsp;Up</a></li>
+                    <% } %>
         </ul>
         <!-- code for side profile  -->
         <div class="profile-submenu-wrap" id="subMenu">
@@ -71,29 +71,30 @@
                 <div class="profile-userinfo">
                     <img src="images/userImage.png" alt="">
                     <% if (user) { %>
-                        <h1>Welcome, <%= user.name %></h1>
+                        <h1>Welcome, <%= user.name %>
+                        </h1>
                         <!-- Display other user properties as needed -->
-                      <% } else { %>
-                        <h1>Welcome, Guest</h1>
-                        <!-- Display a default message or empty values -->
-                      <% } %>
+                        <% } else { %>
+                            <h1>Welcome, Guest</h1>
+                            <!-- Display a default message or empty values -->
+                            <% } %>
                 </div>
                 <hr>
 
                 <a href="/myprofile" class="profile-submenu-link">
                     <img src="images/editProfile.png" alt="">
-                    <p>My Profile</p>
-                    <span>></span>
+                    <p class="profile-submenu-link-text">My Profile</p>
+                    <span class="profile-submenu-link-text">></span>
                 </a>
                 <a href="/Help.html" class="profile-submenu-link">
                     <img src="images/ProfileHelp.png" alt="">
-                    <p>Help & Support</p>
-                    <span>></span>
+                    <p class="profile-submenu-link-text">Help & Support</p>
+                    <span class="profile-submenu-link-text">></span>
                 </a>
                 <button class="profile-submenu-link" onclick="logout()">
                     <img src="images/logoutImage.png" alt="">
-                    <p id="logout-user" >Log Out</p>
-                    <span>></span>
+                    <p id="logout-user" class="profile-submenu-link-text">Log Out</p>
+                    <span class="profile-submenu-link-text">></span>
                 </button>
 
             </div>
@@ -222,6 +223,80 @@
 
         <!-- Main-Image end ====================================================-->
 
+
+
+        <!-- Tracking and navigation start=========================================================== -->
+
+        <div class="tracking-title">
+            <h2>Book us for delivery</h2>
+        </div>
+        <div class="tracking-container">
+            <div class="tracking-map-navigation">
+                <img src="/static/images/SpeedX_free_file2.png" alt="" srcset="">
+            </div>
+
+            <div class="tracking-map-navigation-item">
+                <div class="tracking-heading tracking-item1">
+                    <label for="address">
+                        <h2>PickUp Address:</h2>
+                    </label>
+                    <div>
+                        <input type="text" name="myAddress" id="myPickUpAddress" required
+                            placeholder="Enter PickUp Address">
+
+                    </div>
+
+                </div>
+                <div class="tracking-heading tracking-item2">
+                    <label for="address">
+                        <h2>DropOff Address:</h2>
+                    </label>
+                    <div> <input type="text" name="myAddress" id="myDropOffAddress" required
+                            placeholder="Enter DropOff Address">
+                    </div>
+                </div>
+                <div class="tracking-heading tracking-item3">
+                    <h2>Choose Your Requirements:</h2>
+                    <label for="Requirements">Personal</label>
+                    <input type="checkbox" class="radioCheck" name="" id="">
+                    <label for="Requirements">Business</label>
+                    <input type="checkbox" class="radioCheck" name="" id="">
+                    <label for="Requirements">House Shifting</label>
+                    <input type="checkbox" class="radioCheck" name="" id="">
+                </div>
+                <div class="tracking-heading tracking-item4">
+                    <label for="address">
+                        <h2>Booking Date:</h2>
+                    </label>
+                    <input type="date" name="" id="">
+                </div>
+                <div class="tracking-heading tracking-item5">
+                    <span>
+                        <h2>Estemeted distance:
+                            <p>100 KM</p>
+                        </h2>
+
+                    </span>
+                    <span>
+                        <h2>&nbsp;&nbsp;&nbsp;Estemeted Cost:
+                            <p>&nbsp;&nbsp;&nbsp;300 RS</p>
+                        </h2>
+
+                    </span>
+
+                </div>
+                <div class="tracking-heading tracking-item6">
+                    <span>
+                        <input type="button" value="Book Now">
+                    </span>
+
+                </div>
+            </div>
+        </div>
+        <!-- Tracking and navigation End============================================================ -->
+
+
+
         <!-- What we offer start ================================================= -->
 
         <div class="top-service-title">
@@ -280,8 +355,6 @@
         </div>
 
         <!-- What we offer End =================================================== -->
-
-
 
 
 
@@ -484,73 +557,83 @@
 
 
         <!-- Customer Tesimonial start ================================================ -->
-<div class="customer-testimonial-maindiv">
-    <div class="customer-testimonial-heading">
-        <p>Our Customer Testimonial</p>
-        <h1>See what customer say about us</h1>
-    </div>
-    <section id="testim" class="testim">
-        <!--         <div class="testim-cover"> -->
-        <div class="wrap">
-
-            <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
-            <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
-            <ul id="testim-dots" class="dots">
-                <li class="dot active"></li><!--
-                        -->
-                <li class="dot"></li><!--
-                        -->
-                <li class="dot"></li><!--
-                        -->
-                <li class="dot"></li><!--
-                        -->
-                <li class="dot"></li>
-            </ul>
-            <div id="testim-content" class="cont">
-
-                <div class="active">
-                    <div class="img"><img src="" alt="Loading"></div>
-                    <h2>Lorem P. Ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                </div>
-
-                <div>
-                    <div class="img"><img src="" alt="Loading"></div>
-                    <h2>Mr. Lorem Ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                </div>
-
-                <div>
-                    <div class="img"><img src="" alt="Loading"></div>
-                    <h2>Lorem Ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                </div>
-
-                <div>
-                    <div class="img"><img src="" alt="Loading"></div>
-                    <h2>Lorem De Ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                </div>
-
-                <div>
-                    <div class="img"><img src="" alt="Loading"></div>
-                    <h2>Ms. Lorem R. Ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                </div>
-
+        <div class="customer-testimonial-maindiv">
+            <div class="customer-testimonial-heading">
+                <p>Our Customer Testimonial</p>
+                <h1>See what customer say about us</h1>
             </div>
+            <section id="testim" class="testim">
+                <!--         <div class="testim-cover"> -->
+                <div class="wrap">
 
+                    <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+                    <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+                    <ul id="testim-dots" class="dots">
+                        <li class="dot active"></li><!--
+                        -->
+                        <li class="dot"></li><!--
+                        -->
+                        <li class="dot"></li><!--
+                        -->
+                        <li class="dot"></li><!--
+                        -->
+                        <li class="dot"></li>
+                    </ul>
+                    <div id="testim-content" class="cont">
+
+                        <div class="active">
+                            <div class="img"><img src="" alt="Loading"></div>
+                            <h2>Lorem P. Ipsum</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco.</p>
+                        </div>
+
+                        <div>
+                            <div class="img"><img src="" alt="Loading"></div>
+                            <h2>Mr. Lorem Ipsum</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco.</p>
+                        </div>
+
+                        <div>
+                            <div class="img"><img src="" alt="Loading"></div>
+                            <h2>Lorem Ipsum</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco.</p>
+                        </div>
+
+                        <div>
+                            <div class="img"><img src="" alt="Loading"></div>
+                            <h2>Lorem De Ipsum</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco.</p>
+                        </div>
+
+                        <div>
+                            <div class="img"><img src="" alt="Loading"></div>
+                            <h2>Ms. Lorem R. Ipsum</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--         </div> -->
+            </section>
+
+            <script src="https://use.fontawesome.com/1744f3f671.js"></script>
         </div>
-        <!--         </div> -->
-    </section>
-
-    <script src="https://use.fontawesome.com/1744f3f671.js"></script>
-</div>
 
         <!-- Customer Tesimonial End  ================================================ -->
 

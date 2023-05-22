@@ -180,7 +180,7 @@ a {
 }
 
 .main-div .nav-item li a{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-size: 20px;
     font-family: 'Oswald', sans-serif;
 
@@ -246,7 +246,7 @@ a {
   
  
 background-color: rgb(235, 233, 233);
- margin-left: 1030px;
+ margin-left: 988px;
   width: 220px; 
   margin-bottom: 10px;
   padding: 15px;
@@ -258,6 +258,16 @@ background-color: rgb(235, 233, 233);
 }
 .main-div .profile-submenu-wrap .profile-submenu-link{
   display: flex;
+}
+
+.main-div .profile-submenu-wrap .profile-submenu-link .profile-submenu-link-text{
+
+  background-image: linear-gradient(90deg, #1c238a 2%, #890b70 100%, #ffc);
+  background-clip: content-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+
 }
 .main-div .profile-submenu-wrap .profile-submenu-link img{
   height:20px;
@@ -593,8 +603,91 @@ html {
 /* main-image end =================================================================== */
 
 
+ /* Tracking and navigation start===========================================================  */
+.tracking-title h2{
+  display: initial;
+    max-width: 270px;
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-left: 28px;
+    background-image: linear-gradient(90deg, #1c238a 2%, #890b70 100%, #ffc);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.tracking-container{
+  display: flex;
+  margin: 28px;
+  margin-top: 0px;
+  background-color: #eeeeee;
+    box-shadow: 0 0 11px #ffffff;
+
+}
+
+div .tracking-map-navigation {
+  background-color: #1500ff;
+  width: 50%;
+  height: 447px;
+}
+div .tracking-map-navigation-item{
+  display: block;
+    width: 37%;
+    box-sizing: border-box;
+    /* padding: 5px; */
+    margin-left: 75px;
+    
+}
+.tracking-item5{
+display: flex;  
+
+}
+.tracking-heading{
+  padding: 10px;
+}
+.tracking-heading h2{
+  font-size: 20px;
+    font-weight: 500;
+    /* text-decoration-line: underline; */
+    text-decoration-color: #401b82;
+    text-decoration-style: solid;
+    text-underline-offset: 6px;
+    background-image: linear-gradient(90deg, #1c238a 2%, #890b70 100%, #ffc);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#myPickUpAddress{
+  width: 100%;
+}
+#myDropOffAddress{
+  width: 100%;
+
+}
+.tracking-item6 span{
+  /* width: 100vw;
+  height: 100vh; */
+  display: grid;
+  place-self: center;
+  
+}
+.tracking-item6 span input{
+  background-color: #1b0360;
+  color: white;
+  cursor: pointer;
+  
+}
+.tracking-item6 span input:hover{
+  background-color: #4204fe;
+  
+  
+}
+
+/* Tracking and navigation End============================================================  */
+
 
 /* Our Top Services start============================================================ */
+
 
 .top-service-title h2{
   display: initial;
@@ -661,16 +754,21 @@ height: 240px;
   -webkit-text-fill-color: transparent;
 }
 
-.main-topservice-container .service-button {
+.main-topservice-container .service-button  {
   position: absolute;
     top: 181px;
     right: 31px;
     width: 105px;
-    background-color: #797fe3;
+    background-color:#1b0360;
+    
+    cursor: pointer;
     border-radius: 6px;
 }
-.main-topservice-container .service-button:hover{
-  background-color: #361d83;
+.main-topservice-container .service-button a{
+  color: white;
+}
+.main-topservice-container .service-button:hover {
+  background-color: #4204fe;
 }
 
 /* Our Top Services end============================================================ */
