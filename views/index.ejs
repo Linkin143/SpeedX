@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="speedx.css">
     <link rel="stylesheet" href="speedx.scss">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 
 <body>
@@ -238,6 +238,14 @@
             <div class="tracking-map-navigation-item">
                 <div class="tracking-heading tracking-item1">
                     <label for="address">
+                        <% if (user) { %>
+                            <h6 id="userName" style="display: none;"><%= user.name %></h6>
+                            <h6 id="userID" style="display: none;"><%= user._id %></h6>
+                            <h6 id="userEmail" style="display: none;"><%= user.email %></h6>
+                          <% } else { %>
+                            <h6 id="userID" style="display: none;"></h6>
+                          <% } %>
+                          
                         <h2>PickUp Address:</h2>
                     </label>
                     <div>
@@ -268,7 +276,7 @@
                     <label for="address">
                         <h2>Booking Date:</h2>
                     </label>
-                    <input type="date" name="" id="">
+                    <input type="date" name="" id="bookingDate">
                 </div>
                 <div class="tracking-heading tracking-item5">
                     <span>
@@ -279,7 +287,7 @@
                     </span>
                     <span>
                         <h2>&nbsp;&nbsp;&nbsp;Estemeted Cost:
-                            <p>&nbsp;&nbsp;&nbsp;300 RS</p>
+                            <p id="expectedPrice">&nbsp;&nbsp;&nbsp;300 RS</p>
                         </h2>
 
                     </span>
@@ -849,9 +857,9 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="booking.js"></script>
         <script src="login.js"></script>
         <script src="speedx.js"></script>
-
 </body>
 
 </html>

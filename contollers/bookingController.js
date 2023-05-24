@@ -30,3 +30,18 @@ exports.addBooking = async (req, res) => {
         res.status(500).json({ status: 'Fail', Message: err });
     }
 }
+
+exports.BookingId = async (req, res) => {
+    const Book = await Booking.findById(req.params.id);
+  
+    if (!Book) {
+      return next(new AppError('No user found with that ID', 404));
+    }
+  
+    res.status(200).json({
+      status: 'success',
+      data: {
+        Book
+      }
+    });
+  }

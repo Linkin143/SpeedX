@@ -33,11 +33,21 @@ exports.addUsers = async (req, res) => {
     }
 }
 
-exports.userId = (req, res) => {
-    res
-        .status(500)
-        .json({status: 'Fail', Message: 'Route Not Yet Defined!'})
-}
+exports.userId = async (req, res) => {
+    const user = await User.findById(req.params.id);
+  
+    if (!user) {
+      return next(new AppError('No user found with that ID', 404));
+    }
+  
+    res.status(200).json({
+      status: 'success',
+      data: {
+        user
+      }
+    });
+  }
+
 exports.updateUsers = (req, res) => {
     res
         .status(500)

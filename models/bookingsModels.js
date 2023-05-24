@@ -4,7 +4,7 @@ const bookingSchema = new mongoose.Schema(
     {
         user_id:{
             type: String,
-            required: [true, 'E-mail Should be there!']
+            required: [true, 'UserID Should be there !']
         },
         pickup_address:{
             type: String,
@@ -18,9 +18,17 @@ const bookingSchema = new mongoose.Schema(
             type: Date,
             default: Date.now
         },
+        category:{
+            type: String,
+            // required: [true, 'Category Should be there!']
+        },
         pickup_date:{
             type: String,
             required: [true, 'Pick-up Date Should be there!']
+        },
+        expected_price:{
+            type: String,
+            required: [true, 'Expected Price Should be there!']
         }
     }
 );
