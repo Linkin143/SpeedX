@@ -8,6 +8,7 @@ router.get('/allbooking', bookingController.allBooking);
 router
     .route('/:id')
     .get(bookingController.BookingId)
-
+    .put(bookingController.bookingApprove)
+    .patch(bookingController.bookingDeny)
 
 module.exports = router;

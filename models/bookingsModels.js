@@ -29,6 +29,16 @@ const bookingSchema = new mongoose.Schema(
         expected_price:{
             type: String,
             required: [true, 'Expected Price Should be there!']
+        },
+        status:{
+            type: String,
+            default: 'Pending'
+        },
+        userEmail:{
+            type: String,
+        },
+        userName:{
+            type: String,
         }
     }
 );

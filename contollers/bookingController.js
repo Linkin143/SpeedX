@@ -1,5 +1,6 @@
 const Booking = require('./../models/bookingsModels')
 const newBookingemail = require('../utils/newBookingemail')
+const bookingStatus = require('../utils/bookingStatus')
 
 exports.allBooking = async (req, res) => {
     try {
@@ -33,7 +34,6 @@ exports.addBooking = async (req, res) => {
 
 exports.BookingId = async (req, res) => {
     const Book = await Booking.findById(req.params.id);
-  
     if (!Book) {
       return next(new AppError('No user found with that ID', 404));
     }
@@ -43,5 +43,45 @@ exports.BookingId = async (req, res) => {
       data: {
         Book
       }
+    });
+  }
+
+  exports.bookingApprove = async (req, res, next) => {
+      const Book = await Booking.findByIdAndUpdate(req.params.id, { status: 'approve' }, {
+          new: true,
+          runValidators: true
+      });
+
+      if (!Book) {
+          return next(new AppError('No tour found with that ID', 404));
+      }
+  
+    await bookingStatus.confirmBooking(Book);
+
+      res.status(200).json({
+          status: 'success',
+          data: {
+              Book
+          }
+      });
+  }
+  
+
+  exports.bookingDeny = async (req, res) => {
+    const Book = await Booking.findByIdAndUpdate(req.params.id, { status: 'deny' }, {
+        new: true,
+        runValidators: true
+    });
+    await bookingStatus.bookingDeny(Book);
+    
+    if (!Book) {
+        return next(new AppError('No tour found with that ID', 404));
+    }
+    
+    res.status(200).json({
+        status: 'success',
+        data: {
+            Book
+        }
     });
   }
