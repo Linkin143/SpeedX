@@ -2506,6 +2506,26 @@ background-image: linear-gradient(90deg, #1c238a 2%, #890b70 100%, #ffc);
     right: 100%;
 }
 
+.SpeedX-bottom-sign{
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background-image: linear-gradient(90deg, #1c238a 2%, #890b70 100%, #ffc);
+  background-clip: content-box;
+  -webkit-text-fill-color: whitesmoke;
+  cursor: pointer;
+  width: 107.8%;
+  padding: 0px;
+  padding-left: 0px;
+  margin: 0px;
+  position: relative;
+  left: -50px;
+  bottom: -4px;
+}
+
 /* End */
 
 /* My Profile End ================================================================== */

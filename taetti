@@ -1,0 +1,161 @@
+[33mcommit dae6d722b2ec08687ddc0305dae70ac6625daaed[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: KKA-0 <karanyobro@gmail.com>
+Date:   Fri May 26 01:50:13 2023 +0530
+
+    approve and reject added for booking
+
+[33mcommit 0843daabe421ff5ac8ff8a57646036877e1b750b[m
+Author: KKA-0 <karanyobro@gmail.com>
+Date:   Thu May 25 00:32:40 2023 +0530
+
+    added booking functionality
+
+[33mcommit 86c67ae3491a4635bea25996080837cde8e11600[m
+Author: Prince <kumarprince143@143gmail.com>
+Date:   Mon May 22 07:50:59 2023 +0530
+
+    commited address bar in home
+
+[33mcommit 5fd242677fe6b7bec343ae9434c8703271489903[m
+Author: KKA-0 <karanyobro@gmail.com>
+Date:   Sun May 21 00:13:34 2023 +0530
+
+    bookings and emails for booking and signup
+
+[33mcommit c13da9b822e65127e9e08a77fe5f05de7cb43df8[m
+Author: KKA-0 <karanyobro@gmail.com>
+Date:   Fri May 19 14:13:49 2023 +0530
+
+    error handling for login
+
+[33mcommit 81ddd12adaba5ec763be00cb7e43e59566e7f804[m
+Author: KKA-0 <karanyobro@gmail.com>
+Date:   Fri May 19 13:55:30 2023 +0530
+
+    added address in schema and navbar changes with user
+
+[33mcommit e662fb40a337fcfddf18fbe5583bfce448ce2ef5[m
+Author: KKA-0 <karanyobro@gmail.com>
+Date:   Fri May 19 12:39:21 2023 +0530
+
+    minor refactors
+
+[33mcommit 3dd0a80501c89fc50ce7c2f05234c2f964273760[m
+Author: KKA-0 <karanyobro@gmail.com>
+Date:   Fri May 19 12:29:13 2023 +0530
+
+    changing localhost for production
+
+[33mcommit 8706e6bbea68ddf498cac66c06644f43a56d7302[m
+Merge: 0eae8db 38cad27
+Author: Karan Agarwal <85556603+KKA-0@users.noreply.github.com>
+Date:   Fri May 19 12:05:08 2023 +0530
+
+    Merge pull request #4 from Linkin143/Files_Re-structuree
+    
+    signin/signup/logout done
+
+[33mcommit 38cad279f398fcfd0761f45ff9f40f0f4b77c4c1[m
+Author: KKA-0 <karanyobro@gmail.com>
+Date:   Fri May 19 12:03:45 2023 +0530
+
+    login/signup/logout done
+
+[33mcommit 0eae8db78aa37e5b0a41db9d072d8bfce894de4e[m
+Merge: 9979a6f 286ca10
+Author: Linkin Park <98897799+Linkin143@users.noreply.github.com>
+Date:   Wed May 10 18:03:56 2023 +0530
+
+    Merge pull request #3 from Linkin143/imgbot
+    
+    [ImgBot] Optimize images
+
+[33mcommit e54fcbe6d97bf5e3a8aabc646f3a954739da89cd[m
+Author: KKA-0 <karanyobro@gmail.com>
+Date:   Wed May 10 00:30:07 2023 +0530
+
+    signup working
+
+[33mcommit 286ca101e0fec0ddcd1aa96921e030af163d2c18[m
+Author: ImgBotApp <ImgBotHelp@gmail.com>
+Date:   Tue May 9 02:29:22 2023 +0000
+
+    [ImgBot] Optimize images
+    
+    *Total -- 49,768.90kb -> 46,485.96kb (6.6%)
+    
+    /static/images/tracking.png -- 13.49kb -> 8.84kb (34.5%)
+    /static/images/logistics-service.png -- 117.17kb -> 77.27kb (34.06%)
+    /static/images/insurance.png -- 11.35kb -> 7.63kb (32.74%)
+    /static/images/help4.png -- 33.14kb -> 22.59kb (31.82%)
+    /static/images/ProfileHelp.png -- 85.62kb -> 59.41kb (30.61%)
+    /static/images/safetysupport.png -- 12.62kb -> 8.88kb (29.66%)
+    /static/images/SecurePackage.png -- 15.28kb -> 10.76kb (29.56%)
+    /static/images/help2.png -- 27.41kb -> 20.07kb (26.79%)
+    /static/images/logoutImage.png -- 37.71kb -> 28.10kb (25.47%)
+    /static/images/editProfile.png -- 44.52kb -> 33.21kb (25.4%)
+    /static/images/userImage.png -- 37.02kb -> 28.51kb (22.99%)
+    /static/images/Locations.png -- 44.00kb -> 34.11kb (22.47%)
+    /static/images/daily-transportation.png -- 33.03kb -> 26.05kb (21.13%)
+    /static/images/packersandmovers.png -- 27.86kb -> 22.16kb (20.44%)
+    /static/images/happyclients.png -- 44.29kb -> 35.58kb (19.67%)
+    /static/images/help5.png -- 20.73kb -> 16.81kb (18.89%)
+    /static/images/GPSTracking.png -- 17.97kb -> 14.68kb (18.32%)
+    /static/images/QuickDelivery.png -- 29.26kb -> 24.07kb (17.74%)
+    /static/images/Network.png -- 23.22kb -> 19.14kb (17.57%)
+    /static/images/driver.png -- 26.02kb -> 21.47kb (17.47%)
+    /static/images/help3.png -- 26.36kb -> 21.88kb (16.97%)
+    /static/images/InsuredDelivery2.png -- 30.88kb -> 25.67kb (16.87%)
+    /static/images/budgetFriendly copy.png -- 29.38kb -> 25.48kb (13.25%)
+    /static/images/budgetFriendly.png -- 29.38kb -> 25.48kb (13.25%)
+    /static/images/service-mainimage.png -- 1,000.64kb -> 870.65kb (12.99%)
+    /static/images/SpeedX_free_file1.png -- 19.70kb -> 17.35kb (11.92%)
+    /static/images/SpeedX_free_file2.png -- 18.93kb -> 16.82kb (11.11%)
+    /static/images/main-image8.jpg -- 11,865.14kb -> 10,661.52kb (10.14%)
+    /static/images/main-image2.jpg -- 2,317.55kb -> 2,083.89kb (10.08%)
+    /static/images/main-image4.jpg -- 1,853.95kb -> 1,734.10kb (6.46%)
+    /static/images/signinbg.jpg -- 1,109.58kb -> 1,045.75kb (5.75%)
+    /static/images/quick-contact-bg-image.jpg -- 22,637.44kb -> 21,442.84kb (5.28%)
+    /static/images/enterprises.jpg -- 124.13kb -> 121.29kb (2.29%)
+    /static/images/main-image3.jpg -- 8,004.14kb -> 7,873.84kb (1.63%)
+    
+    Signed-off-by: ImgBotApp <ImgBotHelp@gmail.com>
+
+[33mcommit 9979a6fea30162de3a95de34e4647b079023e749[m
+Merge: 0d8ef11 293bc73
+Author: Linkin Park <98897799+Linkin143@users.noreply.github.com>
+Date:   Sun May 7 13:04:59 2023 +0530
+
+    Merge pull request #1 from Linkin143/Files_Re-structuree
+    
+    Files Re-Structure for Back-end
+
+[33mcommit 293bc73e64132e9aabc5717ce80941bdc8e78eb2[m
+Author: KKA-0 <karanyobro@gmail.com>
+Date:   Sat May 6 19:47:28 2023 +0530
+
+    changes for users routing and contactus
+
+[33mcommit a8b11320d74c9e6df0ad4ec701d3f69821ea3d30[m
+Author: KKA-0 <karanyobro@gmail.com>
+Date:   Sat May 6 01:53:51 2023 +0530
+
+    constact us form functionality added
+
+[33mcommit 68e5f290c1446ff731923941e3cd2f5da6fdd8b1[m
+Author: KKA-0 <karanyobro@gmail.com>
+Date:   Fri May 5 23:41:51 2023 +0530
+
+    files restructure for backend and mongodb setup done
+
+[33mcommit 0d8ef112c19ca7c9c533787e34b33b5af278f2c0[m
+Author: Linkin143 <98897799+Linkin143@users.noreply.github.com>
+Date:   Fri May 5 06:08:10 2023 +0530
+
+    Create README.md
+
+[33mcommit 76932327ef8d8765f51a5df0d74a235c40128caa[m
+Author: Prince <kumarprince143@143gmail.com>
+Date:   Fri May 5 03:23:21 2023 +0530
+
+    Added more htmls

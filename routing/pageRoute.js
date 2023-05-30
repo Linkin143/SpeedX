@@ -1,4 +1,4 @@
-exports.index = function(req, res) {
+ exports.index = function(req, res) {
   const user = res.locals.user;
   res.render('index', { user });
 };
@@ -20,6 +20,11 @@ exports.index = function(req, res) {
   exports.myprofile = function(req, res) {
     const user = res.locals.user;
     res.render('MyProfile', { user });
+  };
+
+  exports.myorder = function(req, res) {
+    const user = res.locals.user;
+    res.render('myorder', { user });
   };
   
   exports.service = function(req, res) {

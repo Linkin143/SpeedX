@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile | SpeedX</title>
+    <title>Dashboard | SpeedX</title>
 
     <!-- Custom Css -->
     <link rel="stylesheet" href="speedx.css">
@@ -13,6 +14,7 @@
     <!-- FontAwesome 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
+
 <body>
     <!-- Navbar top -->
     <div class="MyProfile-navbar-top">
@@ -22,7 +24,7 @@
             </a>
         </div>
         <div class="MyProfile-title">
-            <h1>My Profile</h1>
+            <h1>Orders Dashboard</h1>
         </div>
     </div>
     <!-- End -->
@@ -35,7 +37,7 @@
             <div class="name">
                 <%= user.name %>
             </div>
-            
+
         </div>
 
         <div class="MyProfile-sidenav-MyProfile-url">
@@ -44,7 +46,7 @@
                 <hr align="center">
             </div>
             <div class="MyProfile-url">
-                <a href="/myorder">Orders</a>
+                <a href="">Orders</a>
                 <hr align="center">
             </div>
             <div class="MyProfile-url">
@@ -55,7 +57,7 @@
                 <a href="/service">Services</a>
                 <hr align="center">
             </div>
-            
+
             <div class="MyProfile-url">
                 <a href="/help">Help</a>
                 <hr align="center">
@@ -70,36 +72,71 @@
 
     <!-- MyProfile-main -->
     <div class="MyProfile-main">
-        <h2>IDENTITY</h2>
+        <h2>DASHBOARD</h2>
         <div class="MyProfile-card">
             <div class="MyProfile-card-body">
-                <i class="fas fa-edit fa-1x  "
-                style="margin-left: 600px;"></i>
                 <table>
                     <tbody>
                         <tr>
-                            <td>Name</td>
+                            <td>Order Id</td>
                             <td>:</td>
-                            <td><%= user.name %></td>
+                            <td>
+                                <%= user.name %>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Email</td>
+                            <td>Pickup Address</td>
                             <td>:</td>
-                            <td><%= user.email %></td>
+                            <td>
+                                <%= user.email %>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Address</td>
+                            <td>DropOff Addres</td>
                             <td>:</td>
-                            <td><%= user.address %></td>
+                            <td>
+                                <%= user.address %>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Phone</td>
+                            <td>Order Date</td>
                             <td>:</td>
-                            <td><%= user.phone %></td>
+                            <td>
+                                <%= user.phone %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PickUp Date</td>
+                            <td>:</td>
+                            <td>
+                                <%= user.phone %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Order Total</td>
+                            <td>:</td>
+                            <td>
+                                <%= user.phone %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Payment mode</td>
+                            <td>:</td>
+                            <td>
+                                <%= user.phone %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td>:</td>
+                            <td>
+                                <%= user.phone %>
+                            </td>
                         </tr>
 
                     </tbody>
                 </table>
+                
             </div>
             <div class="SpeedX-bottom-sign">
                 <h6 style="color: white; margin-left: 390px;">
@@ -107,11 +144,12 @@
                 </h6>
             </div>
         </div>
-
         
+
     </div>
     <!-- End -->
     <script src="speedx.js"></script>
 
 </body>
+
 </html>

@@ -45,6 +45,7 @@ app.get('/about', pageRouter.about)
 app.get('/help', pageRouter.help)
 app.get('/myprofile',authController.protect, pageRouter.myprofile)
 app.get('/service', pageRouter.service)
+app.get('/myorder', authController.protect, pageRouter.myorder)
 
 // When the Route is not There
 app.all('*', (req, res, next) => {
