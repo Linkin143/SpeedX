@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap" rel="stylesheet">
+    <!-- Mobile Responsive -->
+    <link rel="stylesheet" media="screen and (max-width:730px)" href="/static/phone.css">
+
     <link rel="stylesheet" href="speedx.css">
     <link rel="stylesheet" href="speedx.scss">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -19,7 +22,7 @@
     <!-- navigation bar start  -->
 
 
-    <div class="main-div">
+    <div class="main-div" id="main-nav-div">
 
         <ul type="none" class="nav-item">
             <nav class="navbar">
@@ -103,6 +106,52 @@
     </div>
 
     <!-- navigation bar end  -->
+
+    <!-- mobile navigation bar start -->
+    <div class="main-mobile-nav">
+        <div id="mySidebar" class="sidebar">
+            <div class="cross-menu">
+                <div class="multiply-menuicon crossItem-1">
+                    <h3>Welcome,</h3>
+                    <h2>Prince Kumar</h2>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                </div>
+
+            </div>
+            <a href="#">Home</a>
+            <a href="#">MyProfile</a>
+            <div class="dropdown">
+                <a class="dropbtn" href="#">Services</a>
+                <div class="dropdown-content">
+                    <a href="#">Daily Transportation</a>
+                    <a href="#">Packer's & Mover's </a>
+                    <a href="#">Logistics Services</a>
+                </div>
+            </div>
+            <a href="#">Blog</a>
+            <a href="#">About Us</a>
+            <a href="#">Help</a>
+            <a href="#">Logout</a>
+        </div>
+
+        <div class="main-sidebar-nav" id="main">
+            <div class="main-sidebar-nav-item sidebar-1">
+                <a class="openbtn" onclick="openNav()">&#9776;</a>
+            </div>
+            <div class="main-sidebar-nav-item sidebar-2">
+               <a href=""> <img src="images/SpeedX_free_file1.png" alt=""></a>
+            </div>
+            <div class="main-sidebar-nav-item sidebar-3">
+                <h1>Login|SignUp</h1>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <!-- mobile navigation bar end -->
 
     <!-- Main-Image start -->
     <div class="main-image">
@@ -239,14 +288,20 @@
                 <div class="tracking-heading tracking-item1">
                     <label for="address">
                         <% if (user) { %>
-                            <h6 id="userName" style="display: none;"><%= user.name %></h6>
-                            <h6 id="userID" style="display: none;"><%= user._id %></h6>
-                            <h6 id="userEmail" style="display: none;"><%= user.email %></h6>
-                          <% } else { %>
-                            <h6 id="userID" style="display: none;"></h6>
-                          <% } %>
-                          
-                        <h2>PickUp Address:</h2>
+                            <h6 id="userName" style="display: none;">
+                                <%= user.name %>
+                            </h6>
+                            <h6 id="userID" style="display: none;">
+                                <%= user._id %>
+                            </h6>
+                            <h6 id="userEmail" style="display: none;">
+                                <%= user.email %>
+                            </h6>
+                            <% } else { %>
+                                <h6 id="userID" style="display: none;"></h6>
+                                <% } %>
+
+                                    <h2>PickUp Address:</h2>
                     </label>
                     <div>
                         <input type="text" name="myAddress" id="myPickUpAddress" required
@@ -325,7 +380,7 @@
                     </p>
                 </div>
 
-                <button class="service-button" type="Know More">
+                <button class="service-button" id="service-button1" type="Know More">
                     <a href="service.html">Know more</a>
                 </button>
 
@@ -519,6 +574,7 @@
             </div>
         </div>
         <!-- Animation-van End ================================================== -->
+
         <!-- Benefits start ======================================================= -->
         <div class="benefits-maindiv">
             <div class="counter-container benefits-box1">
@@ -565,84 +621,90 @@
 
 
         <!-- Customer Tesimonial start ================================================ -->
-        <div class="customer-testimonial-maindiv">
-            <div class="customer-testimonial-heading">
-                <p>Our Customer Testimonial</p>
-                <h1>See what customer say about us</h1>
-            </div>
-            <section id="testim" class="testim">
-                <!--         <div class="testim-cover"> -->
-                <div class="wrap">
+        <div class="customer-testimonial-topdiv">
+            <div class="customer-testimonial-maindiv">
+                <div class="customer-testimonial-heading">
+                    <p>Our Customer Testimonial</p>
+                    <h1>See what customer say about us</h1>
+                </div>
+                <div id="testim" class="testim">
+                    <!--         <div class="testim-cover"> -->
+                    <div class="wrap">
 
-                    <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
-                    <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
-                    <ul id="testim-dots" class="dots">
-                        <li class="dot active"></li><!--
+                        <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+                        <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+                        <ul id="testim-dots" class="dots">
+                            <li class="dot active"></li><!--
                         -->
-                        <li class="dot"></li><!--
+                            <li class="dot"></li><!--
                         -->
-                        <li class="dot"></li><!--
+                            <li class="dot"></li><!--
                         -->
-                        <li class="dot"></li><!--
+                            <li class="dot"></li><!--
                         -->
-                        <li class="dot"></li>
-                    </ul>
-                    <div id="testim-content" class="cont">
+                            <li class="dot"></li>
+                        </ul>
+                        <div id="testim-content" class="cont">
 
-                        <div class="active">
-                            <div class="img"><img src="" alt="Loading"></div>
-                            <h2>Lorem P. Ipsum</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco.</p>
-                        </div>
+                            <div class="active">
+                                <div class="img"><img src="" alt="Loading"></div>
+                                <h2>Lorem P. Ipsum</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt
+                                    ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco.</p>
+                            </div>
 
-                        <div>
-                            <div class="img"><img src="" alt="Loading"></div>
-                            <h2>Mr. Lorem Ipsum</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco.</p>
-                        </div>
+                            <div>
+                                <div class="img"><img src="" alt="Loading"></div>
+                                <h2>Mr. Lorem Ipsum</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt
+                                    ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco.</p>
+                            </div>
 
-                        <div>
-                            <div class="img"><img src="" alt="Loading"></div>
-                            <h2>Lorem Ipsum</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco.</p>
-                        </div>
+                            <div>
+                                <div class="img"><img src="" alt="Loading"></div>
+                                <h2>Lorem Ipsum</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt
+                                    ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco.</p>
+                            </div>
 
-                        <div>
-                            <div class="img"><img src="" alt="Loading"></div>
-                            <h2>Lorem De Ipsum</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco.</p>
-                        </div>
+                            <div>
+                                <div class="img"><img src="" alt="Loading"></div>
+                                <h2>Lorem De Ipsum</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt
+                                    ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco.</p>
+                            </div>
 
-                        <div>
-                            <div class="img"><img src="" alt="Loading"></div>
-                            <h2>Ms. Lorem R. Ipsum</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco.</p>
+                            <div>
+                                <div class="img"><img src="" alt="Loading"></div>
+                                <h2>Ms. Lorem R. Ipsum</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt
+                                    ut
+                                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                    ullamco.</p>
+                            </div>
+
                         </div>
 
                     </div>
-
+                    <!--         </div> -->
                 </div>
-                <!--         </div> -->
-            </section>
 
-            <script src="https://use.fontawesome.com/1744f3f671.js"></script>
+                <script src="https://use.fontawesome.com/1744f3f671.js"></script>
+            </div>
         </div>
-
         <!-- Customer Tesimonial End  ================================================ -->
 
 
@@ -650,111 +712,118 @@
 
 
         <!-- FAQ start ============================================================= -->
-        <div class="faq-container" id="faq-id">
-            <div class='centerplease'>
-                Frequently Asked Questions
-            </div>
-            <br>
-
-            <div class="content">
-                <div>
-                    <input type="checkbox" id="question1" name="q" class="questions">
-                    <div class="plus">+</div>
-                    <label for="question1" class="question">
-                        What is SpeedX?
-                    </label>
-                    <div class="answers">
-                        SpeedX is India's largest and fastest growing delivery service provider. SpeedX is here to
-                        deliver stuff between the cities as we have most safe and secure delivery service model.
-                    </div>
+        <div class="vfaq-container-topdiv">
+            <div class="faq-container" id="faq-id">
+                <div class='centerplease'>
+                    Frequently Asked Questions
                 </div>
+                <br>
 
-                <div>
-                    <input type="checkbox" id="question2" name="q" class="questions">
-                    <div class="plus">+</div>
-                    <label for="question2" class="question">
-                        How do I use SpeedX?
-                    </label>
-                    <div class="answers">
-                        1.Open SpeedX Website-www.speedx.com <br>
-                        2.Select pick up and delivery destination. <br>
-                        3.Choose and rent from 2 wheeler and various mini trucks options (Tata Ace, Pickup 8ft, Pickup
-                        7ft, Tempo etc) <br>
-                        4.Vehicle arrives in under 15 minutes. <br>
+                <div class="content">
+                    <div>
+                        <input type="checkbox" id="question1" name="q" class="questions">
+                        <div class="plus">+</div>
+                        <label for="question1" class="question">
+                            What is SpeedX?
+                        </label>
+                        <div class="answers">
+                            SpeedX is India's largest and fastest growing delivery service provider. SpeedX is here to
+                            deliver stuff between the cities as we have most safe and secure delivery service model.
+                        </div>
                     </div>
-                </div>
 
-                <div>
-                    <input type="checkbox" id="question3" name="q" class="questions">
-                    <div class="plus">+</div>
-                    <label for="question3" class="question">
-                        How do I book a tempo/mini van or bike online from SpeedX?
-                    </label>
-                    <div class="answers">
-                        SpeedX is an web that provides affordable and reliable moving services. <br>
-
-                        Steps to hire a van: <br>
-
-                        1.Sign into the SpeedX web. <br>
-                        2.Browse through the list of available vehicles (Tata Ace, Pickup 8ft, 2 wheeler etc) and pick
-                        the
-                        one that suits your moving needs. <br>
-                        3.Set your pick up and drop off location. <br>
-                        4.Enter a few additional details, apply coupons to get exciting discounts, and confirm your
-                        booking. <br>
-                        5.Sit back and relax- our verified driver partners and technology will do the rest.
+                    <div>
+                        <input type="checkbox" id="question2" name="q" class="questions">
+                        <div class="plus">+</div>
+                        <label for="question2" class="question">
+                            How do I use SpeedX?
+                        </label>
+                        <div class="answers">
+                            1.Open SpeedX Website-www.speedx.com <br>
+                            2.Select pick up and delivery destination. <br>
+                            3.Choose and rent from 2 wheeler and various mini trucks options (Tata Ace, Pickup 8ft,
+                            Pickup
+                            7ft, Tempo etc) <br>
+                            4.Vehicle arrives in under 15 minutes. <br>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <input type="checkbox" id="question4" name="q" class="questions">
-                    <div class="plus">+</div>
-                    <label for="question4" class="question">
-                        Does SpeedX provide intercity or interstate delivery service?
-                    </label>
-                    <div class="answers">
-                        Yes, SpeedX provides intercity & interstate services as well. The intercity & interstate service
-                        allows you to deliver stuff anywhere within 200 km radius from the city center.
-                    </div>
-                </div>
-                <div>
-                    <input type="checkbox" id="question5" name="q" class="questions">
-                    <div class="plus">+</div>
-                    <label for="question5" class="question">
-                        What are the charges for a SpeedX truck/van and SpeedX bike delivery service?
 
-                    </label>
-                    <div class="answers">
-                        The charges for hiring a SpeedX truck/van and SpeedX bike are based on the number of kilometres
-                        travelled, type of vehicle and differs from locality to locality. You can also check the
-                        estimate tab on the SpeedX page to get an exact idea of your trip amount.
-                    </div>
-                </div>
-                <div>
-                    <input type="checkbox" id="question6" name="q" class="questions">
-                    <div class="plus">+</div>
-                    <label for="question6" class="question">
-                        Does SpeedX provide Packers and Movers services?
-                    </label>
-                    <div class="answers">
-                        We have launched Packers and Movers services in Mumbai, Hyderabad, and Nagpur will be
-                        launching soon in other cities. To avail or enquire about this, call us on +91-(983)400–10–79
+                    <div>
+                        <input type="checkbox" id="question3" name="q" class="questions">
+                        <div class="plus">+</div>
+                        <label for="question3" class="question">
+                            How do I book a tempo/mini van or bike online from SpeedX?
+                        </label>
+                        <div class="answers">
+                            SpeedX is an web that provides affordable and reliable moving services. <br>
 
+                            Steps to hire a van: <br>
+
+                            1.Sign into the SpeedX web. <br>
+                            2.Browse through the list of available vehicles (Tata Ace, Pickup 8ft, 2 wheeler etc) and
+                            pick
+                            the
+                            one that suits your moving needs. <br>
+                            3.Set your pick up and drop off location. <br>
+                            4.Enter a few additional details, apply coupons to get exciting discounts, and confirm your
+                            booking. <br>
+                            5.Sit back and relax- our verified driver partners and technology will do the rest.
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <input type="checkbox" id="question7" name="q" class="questions">
-                    <div class="plus">+</div>
-                    <label for="question7" class="question">
-                        How long does SpeedX take to deliver?
-                    </label>
-                    <div class="answers">
-                        The distance & traffic play a major role in determining the delivery time, but we guarantee same
-                        day delivery.
+                    <div>
+                        <input type="checkbox" id="question4" name="q" class="questions">
+                        <div class="plus">+</div>
+                        <label for="question4" class="question">
+                            Does SpeedX provide intercity or interstate delivery service?
+                        </label>
+                        <div class="answers">
+                            Yes, SpeedX provides intercity & interstate services as well. The intercity & interstate
+                            service
+                            allows you to deliver stuff anywhere within 200 km radius from the city center.
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="question5" name="q" class="questions">
+                        <div class="plus">+</div>
+                        <label for="question5" class="question">
+                            What are the charges for a SpeedX truck/van and SpeedX bike delivery service?
+
+                        </label>
+                        <div class="answers">
+                            The charges for hiring a SpeedX truck/van and SpeedX bike are based on the number of
+                            kilometres
+                            travelled, type of vehicle and differs from locality to locality. You can also check the
+                            estimate tab on the SpeedX page to get an exact idea of your trip amount.
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="question6" name="q" class="questions">
+                        <div class="plus">+</div>
+                        <label for="question6" class="question">
+                            Does SpeedX provide Packers and Movers services?
+                        </label>
+                        <div class="answers">
+                            We have launched Packers and Movers services in Mumbai, Hyderabad, and Nagpur will be
+                            launching soon in other cities. To avail or enquire about this, call us on
+                            +91-(983)400–10–79
+
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="question7" name="q" class="questions">
+                        <div class="plus">+</div>
+                        <label for="question7" class="question">
+                            How long does SpeedX take to deliver?
+                        </label>
+                        <div class="answers">
+                            The distance & traffic play a major role in determining the delivery time, but we guarantee
+                            same
+                            day delivery.
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
 
 
         <!-- FAQ end ============================================================= -->

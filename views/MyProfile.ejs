@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile | SpeedX</title>
+    
+    <!-- Mobile Responsive -->
+    <link rel="stylesheet" media="screen and (max-width:830px)" href="phone.css">
 
     <!-- Custom Css -->
     <link rel="stylesheet" href="speedx.css">
@@ -13,6 +17,7 @@
     <!-- FontAwesome 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
+
 <body>
     <!-- Navbar top -->
     <div class="MyProfile-navbar-top">
@@ -35,7 +40,7 @@
             <div class="name">
                 <%= user.name %>
             </div>
-            
+
         </div>
 
         <div class="MyProfile-sidenav-MyProfile-url">
@@ -55,7 +60,7 @@
                 <a href="/service">Services</a>
                 <hr align="center">
             </div>
-            
+
             <div class="MyProfile-url">
                 <a href="/help">Help</a>
                 <hr align="center">
@@ -73,29 +78,36 @@
         <h2>IDENTITY</h2>
         <div class="MyProfile-card">
             <div class="MyProfile-card-body">
-                <i class="fas fa-edit fa-1x  "
-                style="margin-left: 600px;"></i>
+                <i class="fas fa-edit fa-1x  " style="margin-left: 600px;"></i>
                 <table>
                     <tbody>
                         <tr>
                             <td>Name</td>
                             <td>:</td>
-                            <td><%= user.name %></td>
+                            <td>
+                                <%= user.name %>
+                            </td>
                         </tr>
                         <tr>
                             <td>Email</td>
                             <td>:</td>
-                            <td><%= user.email %></td>
+                            <td>
+                                <%= user.email %>
+                            </td>
                         </tr>
                         <tr>
                             <td>Address</td>
                             <td>:</td>
-                            <td><%= user.address %></td>
+                            <td>
+                                <%= user.address %>
+                            </td>
                         </tr>
                         <tr>
                             <td>Phone</td>
                             <td>:</td>
-                            <td><%= user.phone %></td>
+                            <td>
+                                <%= user.phone %>
+                            </td>
                         </tr>
 
                     </tbody>
@@ -103,15 +115,16 @@
             </div>
             <div class="SpeedX-bottom-sign">
                 <h6 style="color: white; margin-left: 390px;">
-                Taking you into great beyond!
+                    Taking you into great beyond!
                 </h6>
             </div>
         </div>
 
-        
+
     </div>
     <!-- End -->
     <script src="speedx.js"></script>
 
 </body>
+
 </html>
