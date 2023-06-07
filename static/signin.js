@@ -43,3 +43,6 @@ function ocultar_login_sign_up() {
 }
 
 
+function contactFormstatus(){
+  document.getElementById('contactStatus').style.display = 'block';
+}

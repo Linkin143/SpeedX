@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer')
 
 exports.contact = async  (req, res) => {
+
     email = req.body.email
     message = req.body.message
     username = req.body.username

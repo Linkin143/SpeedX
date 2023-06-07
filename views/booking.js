@@ -20,8 +20,11 @@ const AddBookingData = async (pickup_address, dropoff_address, pickup_date, expe
         console.log(res)
         console.log(userName)
         console.log(res.data);
+        document.getElementById('statusBooking').textContent = "Successfully";
     }catch(err){
       console.log(err.response.data);
+      document.getElementById('statusBooking').textContent = "Oops... something went wrong";
+
     }
 }
 
@@ -42,7 +45,7 @@ AddBooking.addEventListener('click', e => {
       const user_id = $('#userID').text().trim();
       const userEmail = $('#userEmail').text().trim();
       const userName = $('#userName').text().trim();
-
+      document.getElementById('statusBooking').textContent = "Loading Please Wait...";
       AddBookingData(pickup_address, dropoff_address, pickup_date, expected_price, user_id, userEmail, userName);
   }
 });

@@ -39,6 +39,9 @@ const bookingSchema = new mongoose.Schema(
         },
         userName:{
             type: String,
+        },
+        payment_method:{
+            type: String,
         }
     }
 );

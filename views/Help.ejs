@@ -21,86 +21,139 @@
 
 <body>
 
-  <!-- navigation bar start  -->
+      <!-- navigation bar start  -->
 
 
-  <div class="main-div">
+      <div class="main-div" id="main-nav-div">
 
-    <ul type="none" class="nav-item">
-        <nav class="navbar">
-            <a href="/">
-                <p>
-                    <h1> <img src="/images/SpeedX_free_file1.png" alt="" class="company-logo"> </h1>
-                </p>
+        <ul type="none" class="nav-item">
+            <nav class="navbar">
+                <a href="/">
+                    <p>
+                        <h1> <img src="images/SpeedX_free_file1.png" alt="" class="company-logo"> </h1>
+                    </p>
 
-            </a>
+                </a>
 
-        </nav>
-        <li><a href="/">Home</a></li>
-        <li>
-            <label for="services"></label>
-            <select name="submenu" id="submenu" onclick="window.location.href=this.value;">
+            </nav>
+            <li><a href="/">Home</a></li>
+            <li>
+                <label for="services"></label>
+                <select name="submenu" id="submenu" onclick="window.location.href=this.value;">
 
-                <option disabled selected value="#">Services</option>
-                <option value="service.html">Daily Transportation</option>
-                <option value="service.html">Packer's & Mover's </option>
-                <option value="service.html">Logistics Services</option>
+                    <option disabled selected value="#">Services</option>
+                    <option value="service.html">Daily Transportation</option>
+                    <option value="service.html">Packer's & Mover's </option>
+                    <option value="service.html">Logistics Services</option>
 
-            </select>
-
-
+                </select>
 
 
 
-        </li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#">Blog</a></li>
-        <!-- <li><a href="#">Media</a></li> -->
-        <li><a href="AboutUs.html">About&nbsp;Us</a></li>
-        <li><a href="Help.html">Help</a></li>
-
-        <li><a href="#"></a></li>
-
-        <li class="home-signIn" id="Signin-id"><a href="signin/signin.html">Log&nbsp;In/Sign&nbsp;Up</a></li>
 
 
-        <li class="profile" id="profile-id"><a href="MyProfile.html">
-                <img src="/images/userImage.png" alt="lol" onclick="toggleMenu()">
-            </a>
-        </li>
-    </ul>
-    <!-- code for side profile  -->
-    <div class="profile-submenu-wrap" id="subMenu">
-        <div class="profile-submenu">
-            <div class="profile-userinfo">
-                <img src="/images/userImage.png" alt="">
-                <h2>Prince Kumar</h2>
+            </li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#">Blog</a></li>
+            <!-- <li><a href="#">Media</a></li> -->
+            <li><a href="/about">About&nbsp;Us</a></li>
+            <li><a href="/help">Help</a></li>
+
+            <li><a href="#"></a></li>
+            <% if (user) { %>
+                <li class="profile" id="profile-id"><a href="#">
+                        <img src="images/userImage.png" alt="lol" onclick="toggleMenu()">
+                    </a>
+                </li>
+                <% } else { %>
+                    <li class="home-signIn" id="Signin-id"><a href="/signin">Log&nbsp;In/Sign&nbsp;Up</a></li>
+                    <% } %>
+        </ul>
+        <!-- code for side profile  -->
+        <div class="profile-submenu-wrap" id="subMenu">
+            <div class="profile-submenu">
+                <div class="profile-userinfo">
+                    <img src="images/userImage.png" alt="">
+                    <% if (user) { %>
+                        <h1>Welcome, <%= user.name %>
+                        </h1>
+                        <!-- Display other user properties as needed -->
+                        <% } else { %>
+                            <h1>Welcome, Guest</h1>
+                            <!-- Display a default message or empty values -->
+                            <% } %>
+                </div>
+                <hr>
+
+                <a href="/myprofile" class="profile-submenu-link">
+                    <img src="images/editProfile.png" alt="">
+                    <p class="profile-submenu-link-text">My Profile</p>
+                    <span class="profile-submenu-link-text">></span>
+                </a>
+                <a href="/Help.html" class="profile-submenu-link">
+                    <img src="images/ProfileHelp.png" alt="">
+                    <p class="profile-submenu-link-text">Help & Support</p>
+                    <span class="profile-submenu-link-text">></span>
+                </a>
+                <button class="profile-submenu-link" onclick="logout()">
+                    <img src="images/logoutImage.png" alt="">
+                    <p id="logout-user" class="profile-submenu-link-text">Log Out</p>
+                    <span class="profile-submenu-link-text">></span>
+                </button>
+
             </div>
-            <hr>
+        </div>
 
-            <a href="#" class="profile-submenu-link">
-                <img src="/images/editProfile.png" alt="">
-                <p>Edit Profile</p>
-                <span>></span>
-            </a>
-            <a href="/Help.html" class="profile-submenu-link">
-                <img src="/images/ProfileHelp.png" alt="">
-                <p>Help & Support</p>
-                <span>></span>
-            </a>
-            <a href="#" class="profile-submenu-link">
-                <img src="/images/logoutImage.png" alt="">
-                <p>Log Out</p>
-                <span>></span>
-            </a>
+    </div>
+
+    <!-- navigation bar end  -->
+
+    <!-- mobile navigation bar start -->
+    <div class="main-mobile-nav">
+        <div id="mySidebar" class="sidebar">
+            <div class="cross-menu">
+                <div class="multiply-menuicon crossItem-1">
+                    <h3>Welcome,</h3>
+                    <h2>Prince Kumar</h2>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                </div>
+
+            </div>
+            <a href="#">Home</a>
+            <a href="#">MyProfile</a>
+            <div class="dropdown">
+                <a class="dropbtn" href="#">Services</a>
+                <div class="dropdown-content">
+                    <a href="#">Daily Transportation</a>
+                    <a href="#">Packer's & Mover's </a>
+                    <a href="#">Logistics Services</a>
+                </div>
+            </div>
+            <a href="#">Blog</a>
+            <a href="#">About Us</a>
+            <a href="#">Help</a>
+            <a href="#">Logout</a>
+        </div>
+
+        <div class="main-sidebar-nav" id="main">
+            <div class="main-sidebar-nav-item sidebar-1">
+                <a class="openbtn" onclick="openNav()">&#9776;</a>
+            </div>
+            <div class="main-sidebar-nav-item sidebar-2">
+               <a href=""> <img src="images/SpeedX_free_file1.png" alt=""></a>
+            </div>
+            <div class="main-sidebar-nav-item sidebar-3">
+                <h1>Login|SignUp</h1>
+            </div>
+
+
+
 
         </div>
     </div>
-
-</div>
-
-<!-- navigation bar end  -->
+    <!-- mobile navigation bar end -->
 
 
     <!-- Help Center start ------------------------------------------------------------ -->
@@ -198,9 +251,14 @@
                 <textarea placeholder="Type your Message Here...." name="message" tabindex="5" required></textarea>
                 </fieldset>
                 <fieldset>
-                    <button name="submit" type="submit" id="QuickContact-submit"
+                    <button name="submit" type="submit" onclick="contactFormstatus()" id="QuickContact-submit"
                         data-submit="...Sending">Submit</button>
                 </fieldset>
+                <div>
+                    <center>
+                        <h1 id="contactStatus" style="color:red; display:none;">Loading please Wait...</h1>
+                    </center>
+                </div>
             </form>
             
 

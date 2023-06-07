@@ -8,6 +8,9 @@
 
     <!-- Mobile Responsive -->
     <link rel="stylesheet" media="screen and (max-width:830px)" href="phone.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Custom Css -->
     <link rel="stylesheet" href="speedx.css">
@@ -76,82 +79,15 @@
     <!-- MyProfile-main -->
     <div class="MyProfile-main">
         <h2>DASHBOARD</h2>
-        <div class="MyProfile-card">
-            <div class="MyProfile-card-body">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>Order Id</td>
-                            <td>:</td>
-                            <td>
-                                <%= user.name %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Pickup Address</td>
-                            <td>:</td>
-                            <td>
-                                <%= user.email %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>DropOff Addres</td>
-                            <td>:</td>
-                            <td>
-                                <%= user.address %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Order Date</td>
-                            <td>:</td>
-                            <td>
-                                <%= user.phone %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>PickUp Date</td>
-                            <td>:</td>
-                            <td>
-                                <%= user.phone %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Order Total</td>
-                            <td>:</td>
-                            <td>
-                                <%= user.phone %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Payment mode</td>
-                            <td>:</td>
-                            <td>
-                                <%= user.phone %>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Status</td>
-                            <td>:</td>
-                            <td>
-                                <%= user.phone %>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-                
-            </div>
-            <div class="SpeedX-bottom-sign">
-                <h6 style="color: white; margin-left: 390px;">
-                Taking you into great beyond!
-                </h6>
-            </div>
-        </div>
-        
-
+        <div id="myorderCards"></div>
     </div>
     <!-- End -->
     <script src="speedx.js"></script>
+    <script src="myorder.js"></script>
+    <script>
+        myOrders(`<%= user.id %>`);
+    </script>
+
 
 </body>
 

@@ -85,3 +85,27 @@ exports.BookingId = async (req, res) => {
         }
     });
   }
+
+
+  exports.myorders = async (req, res) => {
+    try {
+      const bookings = await Booking.find({ user_id: req.params.user_id });
+  
+      if (!bookings) {
+        return res.status(404).json({ message: 'No bookings found for the user' });
+      }
+  
+      res
+        .json({
+            results: bookings.length,
+            objects: {
+                bookings
+            }
+        });
+
+    } catch (error) {
+      console.error('Error retrieving bookings:', error);
+      res.status(500).send('Error retrieving bookings');
+    }
+  };
+  

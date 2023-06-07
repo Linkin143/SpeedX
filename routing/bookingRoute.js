@@ -4,6 +4,7 @@ const router = express.Router()
 
 router.post('/addbooking', bookingController.addBooking);
 router.get('/allbooking', bookingController.allBooking);
+router.get('/myorders/:user_id', bookingController.myorders);
 
 router
     .route('/:id')

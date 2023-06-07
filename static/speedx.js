@@ -1,5 +1,4 @@
 // Landing Page---------------------------------------------------
-console.log("as you can see i am not dead")
 const menuToggle = document.querySelector('.toggle');
 const showcase = document.querySelector('.showcase');
 
@@ -353,3 +352,4 @@ function openNav() {
     document.getElementById("main").style.marginLeft = "0";
   }
 // mobile navbar ===================================================
+
