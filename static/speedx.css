@@ -1900,8 +1900,8 @@ label span {
 
 .item1 {
   grid-column: 1/span 2;
-  text-align: center;
-  width: 666px;
+  /* text-align: center; */
+  /* width: 666px; */
   background-color: #000000;
 }
 
@@ -2718,6 +2718,11 @@ hr {
   width: 60%;
 }
 
+.SpeedX-bottom-sign h6{
+  color: white;
+    margin-left: 390px;
+}
+
 .MyProfile-url a {
   background-image: linear-gradient(90deg, #1c238a 2%, #890b70 100%, #ffc);
   background-clip: content-box;
@@ -2735,7 +2740,9 @@ hr {
   font-size: x-large;
 
 }
-
+.MyProfile-card-body i{
+  margin-left: 600px;
+}
 /* End */
 
 /* MyProfile-main */
@@ -3540,6 +3547,7 @@ body {
   padding: 4px 4px;
   border: none;
 }
+
 .openbtn:hover {
   background-color: #444;
 }
@@ -3554,7 +3562,7 @@ body {
 }
 
 
-#main::before{
+#main::before {
   display: inline-block;
   content: "";
   background-image: linear-gradient(90deg, #1c238a 2%, #890b70 100%, #ffc);
@@ -3563,10 +3571,11 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 10%;
   z-index: -1;
 }
-.sidebar-2 img{
+
+.sidebar-2 img {
   height: 4.0rem;
   position: absolute;
   top: 4px;
@@ -3578,10 +3587,11 @@ body {
   padding: 4px;
   right: 0;
 }
-.sidebar-3 h1{
+
+.sidebar-3 h1 {
   font-size: 1.6rem;
-    color: whitesmoke;
-    font-weight: 400;
+  color: whitesmoke;
+  font-weight: 400;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -3859,8 +3869,174 @@ body {
     text-align: center;
   }
 
-}
+  /* About us =============================================== */
+  #large-p {
+    margin-left: 0px;
+    font-size: 7px;
+  }
+  #large-p2{
+    margin-left: 40%;
+    font-size: 7px;
+  
+  }
+  #large-p3{
+    font-size: 7px;
+    position: absolute;
+    right: 0;
+    }
+    #small-p{
+      margin-left: 0px;
+      font-size: 7px;
+    }
+    #small-p2{
+      margin-left: 40%;
+      font-size: 7px;
+    }
+    #small-p3{
+      display: none;
+      font-size: 7px;
+      position: absolute;
+      right: 0px;
+    }
+    #page-name-bar-heading{
+      width: 100%;
+    }
+    #main-wrap{
+      width: 100%;
+    }
+    #menu-bar2{
+      width: 100%;
+    }
+    #about-us-text{
+      margin-top: 206px;
+    padding: 15px;
+      margin-left: 0px;
+      text-align: center;
+      width: 100%;
+    }
+    #p-n-b-h2{
+      text-align: center;
+      margin-left: 0px;
+      
+      width: 100%;
+    }
+    #p-n-b-h3{
+      width: 100%;
+    margin-left: auto;
+    text-align: center;
+    margin-top: 805px;
+    }
+    .wrapper{
+      margin-top: 866px;
+    }
+    .timeline::before {
+      content: "";
+      display: none;
+      position: absolute;
+      top: 8%;
+      left: 58%;
+      width: 4px;
+      height: 84%;
+      background-color: rgb(77, 77, 77);
+      margin-top: 790px;
+  }
+  .timeline__item {
+    margin-bottom: 0px;
+    position: relative;
+  }
+  #menu-bar{
+    margin-top: 0px;
+  }
+  .MyProfile-sidenav{
+    width: 9.4rem;
+  }
+  .MyProfile img{
+    width: 50px;
+    height: 50px;
+  }
+  .name{
+    font-size: 1.8rem;
+  }
+  .MyProfile-url a{
+    font-size: 1.6rem;
+  }
+  .MyProfile-main{
+    width: auto;
+  }
+  .MyProfile-main .MyProfile-card table{
+    height: auto;
+    width: 100%;
 
+  }
+  .MyProfile-main .MyProfile-card{
+    padding: 20px 0 20px 10px;
+  }
+  .SpeedX-bottom-sign h6{
+    margin-left: 0px;
+  }
+  .SpeedX-bottom-sign{
+    left: -10px;
+    width: 104.8% ;
+  }
+  .MyProfile-card-body i{
+    margin-left: 0px;
+  }
+  .fa-edit:before{
+    display: none;
+  }
+  .MyProfile-card-body td{
+    font-size: 1rem;
+    display: initial;
+  }
+  .My-profile-company-logo img{
+    height: 4.28rem;
+    margin-top: 12px;
+  }
+  .MyProfile-title h1{
+    
+    font-size: 1.2rem;
+  }
+  .help-container {
+    /* background-color: #000000; */
+    width: 10%;
+    /* height: 390px; */
+    display: initial;
+    grid-template-columns: 0fr 0fr;
+    grid-template-rows: 0fr 0fr 0fr;
+    row-gap: 12px;
+    column-gap: 12px;
+    margin-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    place-items: center;
+}
+.help-container .item1 h1{
+  text-align: center;
+  
+
+}
+.help-container .help-item h3{
+  text-align: center;
+  font-size: 1rem;
+}
+.help-item{
+  width: 100%;
+  height: 140px;
+}
+.help-container .help-item img{
+  height: 120px;
+    width: 57px;
+}
+.help-container .help-item h2{
+  font-size: 1.2rem;
+}
+.quick-contact-main-container{
+  margin-top: 0px;
+}
+.help-container .item4 img{
+  margin-top: 13px;
+}
+}
 
 
 @media (min-width:1000px) and (max-width:1800px) {

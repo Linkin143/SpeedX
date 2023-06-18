@@ -374,3 +374,31 @@ margin-left: 30px;
   color: red;
   padding: 10px 0;
 }
+
+/* Mobile responsive========================== */
+
+@media screen and (max-width:1000px){
+
+  .cont_info_log_sign_up{
+    display: flex;
+    flex-direction: column;
+    height: 456px;
+  }
+  .col_md_sign_up{
+    margin-right: 64px;
+}
+.col_md_login{
+  margin-right: 64px;
+
+}
+.cont_forms_active_login{
+  top: 115px;
+    left: 42%;
+   
+}
+.cont_forms_active_sign_up{
+  top: 88px;
+  left: 265px;
+
+}
+}
