@@ -680,9 +680,9 @@ html {
 
 }
 
-div .tracking-map-navigation {
-  background-color: #1500ff;
-  width: 50%;
+div .tracking-map-navigation img{
+  /* background: url(/static/images/map.jpg); */
+  width: 500px;
   height: 447px;
 }
 
@@ -3671,7 +3671,7 @@ body {
   }
 
   div .tracking-map-navigation {
-    height: 225px;
+   
     width: 100%;
   }
 
@@ -4035,6 +4035,10 @@ body {
 }
 .help-container .item4 img{
   margin-top: 13px;
+}
+div .tracking-map-navigation img{
+  width: 100%;
+  height: auto;
 }
 }
 
