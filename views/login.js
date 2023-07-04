@@ -46,7 +46,7 @@ async function logout() {
         // url: 'http://127.0.0.1:3000/api/users/logout'
         url: '/api/users/logout'
       });
-      location.reload(true);
+      window.location.href = "/";
     } catch (err) {
       console.log("Error logging out", err);
     }

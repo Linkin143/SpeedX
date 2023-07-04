@@ -69,7 +69,7 @@
                 <hr align="center">
             </div>
             <div class="MyProfile-url">
-                <a href="#settings">Log Out</a>
+                <a onclick="logout()">Log Out</a>
                 <hr align="center">
             </div>
         </div>
@@ -87,7 +87,9 @@
     <script>
         myOrders(`<%= user.id %>`);
     </script>
-
+    <script src="login.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </body>
 

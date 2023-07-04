@@ -10,12 +10,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap" rel="stylesheet">
     <!-- Mobile Responsive -->
-    <link rel="stylesheet" media="screen and (max-width:730px)" href="/static/phone.css">
+    <link rel="stylesheet" media="screen and (max-width:730px)" href="phone.css">
 
     <link rel="stylesheet" href="speedx.css">
     <link rel="stylesheet" href="speedx.scss">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://apis.mappls.com/advancedmaps/api/2215d1d690e70b73e67757e7a4207f72/map_sdk?layer=vector&v=3.0&callback=initMap1"></script>
+    <script src="https://apis.mappls.com/advancedmaps/api/2215d1d690e70b73e67757e7a4207f72/map_sdk_plugins?v=3.0"></script>
+   
+    <style>
+        body { margin: 0; }
+        #map {width: 600px; height: 400px;margin: 0; padding: 0; }
+        #watermark_logo0 {display: none;}
+        div .tracking-map-navigation img {display: none;}
+        .mapboxgl-ctrl-top-left {display: none;}
+    </style> 
+
+    <script src="https://apis.mappls.com/advancedmaps/api/1c4d023b-0456-44c1-9fba-00243e63b6ab/map_sdk_plugins?v=3.0&libraries=getPinDetails"></script>
+
 </head>
 
 <body>
@@ -40,9 +54,9 @@
                 <select name="submenu" id="submenu" onclick="window.location.href=this.value;">
 
                     <option disabled selected value="#">Services</option>
-                    <option value="service.html">Daily Transportation</option>
-                    <option value="service.html">Packer's & Mover's </option>
-                    <option value="service.html">Logistics Services</option>
+                    <option value="/service">Daily Transportation</option>
+                    <option value="/service">Packer's & Mover's </option>
+                    <option value="/service">Logistics Services</option>
 
                 </select>
 
@@ -112,15 +126,23 @@
         <div id="mySidebar" class="sidebar">
             <div class="cross-menu">
                 <div class="multiply-menuicon crossItem-1">
-                    <h3>Welcome,</h3>
-                    <h2>Prince Kumar</h2>
+                    <% if (user) { %>
+                        <h1>Welcome, <%= user.name %>
+                        </h1>
+                        <!-- Display other user properties as needed -->
+                        <% } else { %>
+                            <h1>Welcome, Guest</h1>
+                            <!-- Display a default message or empty values -->
+                            <% } %>
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
                 </div>
 
             </div>
             <a href="">Home</a>
+            <% if (user) { %>
             <a href="/myprofile">MyProfile</a>
+            <% }%>
             <div class="dropdown">
                 <a class="dropbtn" href="/service">Services</a>
                 <div class="dropdown-content">
@@ -132,7 +154,9 @@
             <a href="#">Blog</a>
             <a href="/about">About Us</a>
             <a href="/help">Help</a>
-            <a href="#">Logout</a>
+            <% if (user) { %>
+            <a onclick="logout()">Logout</a>
+            <% } %>
         </div>
 
         <div class="main-sidebar-nav" id="main">
@@ -284,11 +308,9 @@
         </div>
         <div class="tracking-container">
             <div class="tracking-map-navigation">
-                <img src="https://images.unsplash.com/photo-1604357209793-fca5dca89f97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
-                    alt="Loading...">
+                <div id="map"></div>
                 <!-- <img src="/static/images/driver.png" alt=""> -->
             </div>
-
             <div class="tracking-map-navigation-item">
                 <div class="tracking-heading tracking-item1">
                     <label for="address">
@@ -310,7 +332,8 @@
                     </label>
                     <div>
                         <input type="text" name="myAddress" id="myPickUpAddress" required
-                            placeholder="Enter PickUp Address">
+                            placeholder="Enter PickUp Address" onchange="pickupAddress()">
+                        <input type="text" id="pickupOrdinates" style="display: none;">
 
                     </div>
 
@@ -319,8 +342,9 @@
                     <label for="address">
                         <h2>DropOff Address:</h2>
                     </label>
-                    <div> <input type="text" name="myAddress" id="myDropOffAddress" required
+                    <div> <input type="text" name="myAddress" id="myDropOffAddress" onchange="DropOffAddress()" required
                             placeholder="Enter DropOff Address">
+                            <input type="text" id="dropoffOrdinates" style="display: none;">
                     </div>
                 </div>
                 <div class="tracking-heading tracking-item3">
@@ -341,13 +365,13 @@
                 <div class="tracking-heading tracking-item5">
                     <span>
                         <h2>Estemeted distance:
-                            <p>100 KM</p>
+                            <p id="distance">0 KM</p>
                         </h2>
 
                     </span>
                     <span>
                         <h2>&nbsp;&nbsp;&nbsp;Estemeted Cost:
-                            <p id="expectedPrice">&nbsp;&nbsp;&nbsp;300 RS</p>
+                            <p id="expectedPrice">&nbsp;&nbsp;&nbsp;0 Rs</p>
                         </h2>
 
                     </span>
@@ -939,6 +963,8 @@
         <script src="booking.js"></script>
         <script src="login.js"></script>
         <script src="speedx.js"></script>
+        <script src="maps/distance.js"></script>
+        <script src="maps/suggestAddress.js"></script>
 </body>
 
 </html>

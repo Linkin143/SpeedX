@@ -41,11 +41,11 @@ app.use('/api/users', usersRouter);
 app.use('/api/bookings', bookingsRouter);
 
 app.get('/signin',authController.isLoggedIn, pageRouter.signup)
-app.get('/about', pageRouter.about)
-app.get('/help', pageRouter.help)
-app.get('/myprofile',authController.protect, pageRouter.myprofile)
-app.get('/service', pageRouter.service)
-app.get('/myorder', authController.protect, pageRouter.myorder)
+app.get('/about', authController.isLoggedIn,pageRouter.about)
+app.get('/help', authController.isLoggedIn,pageRouter.help)
+app.get('/myprofile',authController.isLoggedIn,authController.protect, pageRouter.myprofile)
+app.get('/service', authController.isLoggedIn,pageRouter.service)
+app.get('/myorder', authController.isLoggedIn,authController.protect, pageRouter.myorder)
 
 // When the Route is not There
 app.all('*', (req, res, next) => {
