@@ -4040,9 +4040,73 @@ div .tracking-map-navigation img{
   width: 100%;
   height: auto;
 }
+
+/* Service Page============================================================== */
+.service-main-image-conatiner{
+  display: flex;
+    justify-content: center;
+    height: 255px;
+}
+.service-main-image-conatiner .service-main-image-Quote{
+  margin-left: 105px;
+  z-index: 2;
 }
 
+.service-main-image-conatiner .service-main-image-Quote h2{
+font-size: 2.2rem;
+}
+.service-main-image-conatiner .service-main-image-Quote p{
+  font-size: 1.2rem;
 
+}
+.top-services-conatiner p img {
+  height: 213px;
+  margin: auto;
+}
+.safety-maincontainer{
+  display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.safety-item{
+  width: auto;
+}
+.safety-image img{
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+.safety-lines h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+}
+.top-services-conatiner{
+  margin: auto;
+}
+.service-main-image-conatiner .service-main-image img{
+  position: absolute;
+    margin-top: 1px;
+    left: -33px;
+    height: 215px;
+    opacity: 0.5;
+    box-shadow: 12px 12px 26px 1px rgb(123, 122, 122);
+    width: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-transform: skewX(-10deg);
+    transform: skew(-15deg, 0deg);
+}
+.top-services-conatiner p img {
+  height: 111px;
+  width: 256px;
+}
+.top-services-conatiner p {
+  display: flex;
+  font-size: 1.4rem;
+}
+
+}
 @media (min-width:1000px) and (max-width:1800px) {
   .main-mobile-nav {
     display: none;
