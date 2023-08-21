@@ -871,7 +871,7 @@ div .tracking-map-navigation-item {
 }
 
 .service-main-image-conatiner .service-main-image-Quote h2 {
-  font-size: 60px;
+  font-size: 50px;
   background-image: linear-gradient(90deg, #1c238a 2%, #890b70 100%, #ffc);
   background-clip: content-box;
   -webkit-background-clip: text;
@@ -4043,7 +4043,7 @@ div .tracking-map-navigation img{
 
 /* Service Page============================================================== */
 .service-main-image-conatiner{
-  display: flex;
+  display: inline-table;
     justify-content: center;
     height: 255px;
 }
