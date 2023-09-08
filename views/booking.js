@@ -1,9 +1,10 @@
 // import axios from 'axios';
 console.error($('#userID').text().trim())
-const AddBookingData = async (pickup_address, dropoff_address, pickup_date, expected_price, user_id, userEmail, userName) => {
-    console.log(pickup_address, dropoff_address, pickup_date, expected_price, user_id, userEmail, userName)
+
+const AddBookingData = (pickup_address, dropoff_address, pickup_date, expected_price, user_id, userEmail, userName, Requirements) => {
+    console.log(pickup_address, dropoff_address, pickup_date, expected_price, user_id, userEmail, userName, Requirements)
     try{
-        const res = await axios({
+        const res = axios({
             method: 'POST',
             url: '/api/bookings/addbooking',
 
@@ -14,13 +15,15 @@ const AddBookingData = async (pickup_address, dropoff_address, pickup_date, expe
                 expected_price,
                 user_id,
                 userEmail,
-                userName
+                userName,
+                Requirements
             }
         })
         console.log(res)
         console.log(userName)
         console.log(res.data);
         document.getElementById('statusBooking').textContent = "Successfully";
+
     }catch(err){
       console.log(err.response.data);
       document.getElementById('statusBooking').textContent = "Oops... something went wrong";
@@ -29,7 +32,7 @@ const AddBookingData = async (pickup_address, dropoff_address, pickup_date, expe
 }
 
 
-const AddBooking = document.querySelector('.tracking-heading.tracking-item6 input[type="button"]');
+const AddBooking = document.getElementById("addBooking");
 AddBooking.addEventListener('click', e => {
   e.preventDefault();
   const userID = $('#userID').text().trim();
@@ -45,8 +48,9 @@ AddBooking.addEventListener('click', e => {
       const user_id = $('#userID').text().trim();
       const userEmail = $('#userEmail').text().trim();
       const userName = $('#userName').text().trim();
+      const Requirements = document.querySelector('input[name="Requirements"]:checked').value;
       document.getElementById('statusBooking').textContent = "Loading Please Wait...";
-      AddBookingData(pickup_address, dropoff_address, pickup_date, expected_price, user_id, userEmail, userName);
+      AddBookingData(pickup_address, dropoff_address, pickup_date, expected_price, user_id, userEmail, userName, Requirements);
   }
 });
 

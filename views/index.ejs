@@ -17,16 +17,16 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-    <script src="https://apis.mappls.com/advancedmaps/api/2215d1d690e70b73e67757e7a4207f72/map_sdk?layer=vector&v=3.0&callback=initMap1"></script>
-    <script src="https://apis.mappls.com/advancedmaps/api/2215d1d690e70b73e67757e7a4207f72/map_sdk_plugins?v=3.0"></script>
+    <!-- <script src="https://apis.mappls.com/advancedmaps/api/2215d1d690e70b73e67757e7a4207f72/map_sdk?layer=vector&v=3.0&callback=initMap1"></script> -->
+    <!-- <script src="https://apis.mappls.com/advancedmaps/api/2215d1d690e70b73e67757e7a4207f72/map_sdk_plugins?v=3.0"></script> -->
    
-    <style>
+    <!-- <style>
         body { margin: 0; }
         #map {width: 600px; height: 400px;margin: 0; padding: 0; }
         #watermark_logo0 {display: none;}
         div .tracking-map-navigation img {display: none;}
         .mapboxgl-ctrl-top-left {display: none;}
-    </style> 
+    </style>  -->
 
     <script src="https://apis.mappls.com/advancedmaps/api/1c4d023b-0456-44c1-9fba-00243e63b6ab/map_sdk_plugins?v=3.0&libraries=getPinDetails"></script>
 
@@ -308,7 +308,7 @@
         </div>
         <div class="tracking-container">
             <div class="tracking-map-navigation">
-                <div id="map"></div>
+                <!-- <div id="map"></div> -->
                 <!-- <img src="/static/images/driver.png" alt=""> -->
             </div>
             <div class="tracking-map-navigation-item">
@@ -350,11 +350,11 @@
                 <div class="tracking-heading tracking-item3">
                     <h2>Choose Your Requirements:</h2>
                     <label for="Requirements">Personal</label>
-                    <input type="checkbox" class="radioCheck" name="" id="">
+                    <input type="radio" class="radioCheck" name="Requirements" value="Personal" id="Requirements">
                     <label for="Requirements">Business</label>
-                    <input type="checkbox" class="radioCheck" name="" id="">
+                    <input type="radio" class="radioCheck" name="Requirements" value="Business" id="Requirements">
                     <label for="Requirements">House Shifting</label>
-                    <input type="checkbox" class="radioCheck" name="" id="">
+                    <input type="radio" class="radioCheck" name="Requirements" value="House Shifting" id="Requirements">
                 </div>
                 <div class="tracking-heading tracking-item4">
                     <label for="address">
@@ -379,7 +379,7 @@
                 </div>
                 <div class="tracking-heading tracking-item6">
                     <span>
-                        <input type="button" value="Book Now">
+                        <input id="addBooking" type="button" value="Book Now">
                     </span>
 
                 </div>
@@ -963,8 +963,8 @@
         <script src="booking.js"></script>
         <script src="login.js"></script>
         <script src="speedx.js"></script>
-        <script src="maps/distance.js"></script>
-        <script src="maps/suggestAddress.js"></script>
+        <!-- <script src="maps/distance.js"></script> -->
+        <!-- <script src="maps/suggestAddress.js"></script> -->
 </body>
 
 </html>

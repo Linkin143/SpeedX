@@ -18,9 +18,9 @@ const bookingSchema = new mongoose.Schema(
             type: Date,
             default: Date.now
         },
-        category:{
+        Requirements:{
             type: String,
-            // required: [true, 'Category Should be there!']
+            default: "Personal"
         },
         pickup_date:{
             type: String,
@@ -42,6 +42,7 @@ const bookingSchema = new mongoose.Schema(
         },
         payment_method:{
             type: String,
+            default: "Cash on Delivery"
         }
     }
 );

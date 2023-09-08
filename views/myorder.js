@@ -5,11 +5,24 @@ const myOrders = async (userID) => {
         url: `api/bookings/myorders/${userID}`,
     });
     console.log(res.data);
-    //My orders cards appendding
     const loopRan = res.data.results;
 
-for (let i = 0; i < loopRan; i++) {
+    for (let i = 0; i < loopRan; i++) {
   console.log(i, loopRan);
+
+  function Status() {
+    if(res.data.objects.bookings[i].status == "Pending")
+    {
+        return "<td style='color: orange'><b> Pending </b></td>"
+    }
+    else if(res.data.objects.bookings[i].status == "Approve"){
+        return "<td style='color: green'><b> Approve </b></td>"
+    }
+    else if(res.data.objects.bookings[i].status == "Deny"){
+        return "<td style='color: red'><b> Deny </b></td>"
+    }
+  }
+
   $('#myorderCards').append(`
   <div class="MyProfile-card">
   <div class="MyProfile-card-body">
@@ -69,9 +82,9 @@ for (let i = 0; i < loopRan; i++) {
               <tr>
                   <td>Status</td>
                   <td>:</td>
-                  <td>
-                  ${res.data.objects.bookings[i].status}
-                  </td>
+                  
+                  ${Status()}
+                  
               </tr>
 
           </tbody>

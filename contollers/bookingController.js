@@ -47,7 +47,7 @@ exports.BookingId = async (req, res) => {
   }
 
   exports.bookingApprove = async (req, res, next) => {
-      const Book = await Booking.findByIdAndUpdate(req.params.id, { status: 'approve' }, {
+      const Book = await Booking.findByIdAndUpdate(req.params.id, { status: 'Approve' }, {
           new: true,
           runValidators: true
       });
@@ -68,7 +68,7 @@ exports.BookingId = async (req, res) => {
   
 
   exports.bookingDeny = async (req, res) => {
-    const Book = await Booking.findByIdAndUpdate(req.params.id, { status: 'deny' }, {
+    const Book = await Booking.findByIdAndUpdate(req.params.id, { status: 'Deny' }, {
         new: true,
         runValidators: true
     });
@@ -89,7 +89,7 @@ exports.BookingId = async (req, res) => {
 
   exports.myorders = async (req, res) => {
     try {
-      const bookings = await Booking.find({ user_id: req.params.user_id });
+      const bookings = await Booking.find({ user_id: req.params.user_id }).sort({'_id': -1});;
   
       if (!bookings) {
         return res.status(404).json({ message: 'No bookings found for the user' });
