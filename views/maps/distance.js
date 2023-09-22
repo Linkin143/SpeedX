@@ -13,7 +13,7 @@
             distance = response.data.rows[0].elements[0].distance.text;
             $("#distance").text(distance)
             var expectedPrice = parseInt(distance, 10)
-            $("#expectedPrice").text("   Rs "+expectedPrice*300)
+            $("#expectedPrice").text("   Rs "+(expectedPrice*300))
           })
           .catch(function (error) {
             // handle error
