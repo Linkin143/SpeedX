@@ -2,6 +2,7 @@
 
   const loginData = async (email, password) => {
     console.log(email, password)
+    $(".loading-loader").css("display","initial")
     try{
         const res = await axios({
             method: 'POST',
@@ -17,11 +18,12 @@
         setInterval(function() {
           window.location.href = "/";
         }, 1000);
-        
+        $(".loading-loader").css("display","none")
         console.log(res.data);
           $('#errorshowLogin').text('Successfully Loggedin')
     }catch(err){
       console.log(err.response.data);
+      $(".loading-loader").css("display","none")
       $('#errorshowLogin').text(err.response.data.error);
     }
 }

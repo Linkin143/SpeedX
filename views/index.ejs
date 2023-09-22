@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | SpeedX</title>
+    <link rel="icon" type="image/x-icon" href="https://drive.google.com/uc?export=download&id=1m6uFt-6qXi2FW50tiJrUM1ABculORKFy">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
     <link rel="stylesheet" media="screen and (max-width:730px)" href="phone.css">
 
     <link rel="stylesheet" href="speedx.css">
-    <link rel="stylesheet" href="speedx.scss">
+    <!-- <link rel="stylesheet" href="speedx.scss"> -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
@@ -28,7 +29,7 @@
         .mapboxgl-ctrl-top-left {display: none;}
     </style>  -->
 
-    <script src="https://apis.mappls.com/advancedmaps/api/1c4d023b-0456-44c1-9fba-00243e63b6ab/map_sdk_plugins?v=3.0&libraries=getPinDetails"></script>
+    <!-- <script src="https://apis.mappls.com/advancedmaps/api/1c4d023b-0456-44c1-9fba-00243e63b6ab/map_sdk_plugins?v=3.0&libraries=getPinDetails"></script> -->
 
 </head>
 
@@ -332,7 +333,7 @@
                     </label>
                     <div>
                         <input type="text" name="myAddress" id="myPickUpAddress" required
-                            placeholder="Enter PickUp Address" onchange="pickupAddress()">
+                            placeholder="Enter PickUp Address">
                         <input type="text" id="pickupOrdinates" style="display: none;">
 
                     </div>
@@ -342,8 +343,8 @@
                     <label for="address">
                         <h2>DropOff Address:</h2>
                     </label>
-                    <div> <input type="text" name="myAddress" id="myDropOffAddress" onchange="DropOffAddress()" required
-                            placeholder="Enter DropOff Address">
+                    <div> <input type="text" name="myAddress" id="myDropOffAddress" required
+                            placeholder="Enter DropOff Address" onchange="findDistance()" >
                             <input type="text" id="dropoffOrdinates" style="display: none;">
                     </div>
                 </div>
@@ -963,7 +964,7 @@
         <script src="booking.js"></script>
         <script src="login.js"></script>
         <script src="speedx.js"></script>
-        <!-- <script src="maps/distance.js"></script> -->
+        <script src="maps/distance.js"></script>
         <!-- <script src="maps/suggestAddress.js"></script> -->
 </body>
 

@@ -270,6 +270,8 @@ a {
 
 .main-div .profile-submenu-wrap .profile-submenu-link {
   display: flex;
+  border: none;
+  background: rgb(235, 233, 233);
 }
 
 .main-div .profile-submenu-wrap .profile-submenu-link .profile-submenu-link-text {

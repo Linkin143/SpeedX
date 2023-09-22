@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path')
 const dotenv = require('dotenv');
-const morgan = require('morgan');
-app.use(morgan('dev'));
+// const morgan = require('morgan');
+// app.use(morgan('dev'));
 dotenv.config({path: './config.env'});
 const bodyParser = require('body-parser')
 const contactController = require('./contollers/contactController')

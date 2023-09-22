@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign In | SpeedX</title>
+  <link rel="icon" type="image/x-icon" href="https://drive.google.com/uc?export=download&id=1m6uFt-6qXi2FW50tiJrUM1ABculORKFy">
+
   <!-- Mobile Responsive -->
   <link rel="stylesheet" media="screen and (max-width:830px)" href="phone.css">
 
@@ -66,6 +68,7 @@
               <form>
                 <input type="text" class="inputfeilds"  id="emailLogin" placeholder="Email or Mobile No." />
                 <input type="password" class="inputfeilds"  id="passLogin" placeholder="Password" />
+                <img class="loading-loader" src="https://media.tenor.com/hlKEXPvlX48AAAAi/loading-loader.gif" style="height: 30px; display: none;" ><br>
                 <a href="api/users/forgot">Forgot Password</a>
                 <h5 style="color: red;" id="errorshowLogin"></h5>
                 <button class="btn_login" type="submit">LOGIN</button>
@@ -80,7 +83,8 @@
               <input type="text" class="inputfeilds"  id="phoneSignup" placeholder="Mobile No." />
               <input type="text" class="inputfeilds"  id="usernameSignup" placeholder="Username" />
               <input type="password" class="inputfeilds"  id="passSignup" placeholder="Password" />
-              <input type="password" class="inputfeilds"  id="c-passSignup" placeholder="Confirm Password" />
+              <input type="password" class="inputfeilds"  id="c-passSignup" placeholder="Confirm Password" /><br>
+              <img class="loading-loader-signup" src="https://media.tenor.com/hlKEXPvlX48AAAAi/loading-loader.gif" style="height: 20px; display: none;" ><br>
               <h5 id="errorshowSignup"></h5>
               <button class="btn_sign_up" type="submit">SIGN UP</button>
             </form>

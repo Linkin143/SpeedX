@@ -1,4 +1,5 @@
 const signupData = async (email, phone, password, name, confirmPassword) => {
+  $(".loading-loader-signup").css("display", "initial")
   try {
     const res = await axios({
       method: 'POST',
@@ -13,6 +14,7 @@ const signupData = async (email, phone, password, name, confirmPassword) => {
         confirmPassword
       }
     });
+  $(".loading-loader-signup").css("display", "none")
     setInterval(function() {
       window.location.href = "/";
     }, 3000);
@@ -20,6 +22,7 @@ const signupData = async (email, phone, password, name, confirmPassword) => {
     console.log(res.data);
       $('#errorshowSignup').text('Successfully Registered')
   } catch (err) {
+      $(".loading-loader-signup").css("display", "none")
       data = err.response.data.message
       parts = data.split(",")
       error = parts[0]
