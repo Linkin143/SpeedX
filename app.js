@@ -4,6 +4,7 @@ const path = require('path')
 const dotenv = require('dotenv');
 // const morgan = require('morgan');
 // app.use(morgan('dev'));
+const axios = require('axios')
 dotenv.config({path: './config.env'});
 const bodyParser = require('body-parser')
 const contactController = require('./contollers/contactController')
@@ -46,6 +47,24 @@ app.get('/help', authController.isLoggedIn,pageRouter.help)
 app.get('/myprofile',authController.isLoggedIn,authController.protect, pageRouter.myprofile)
 app.get('/service', authController.isLoggedIn,pageRouter.service)
 app.get('/myorder', authController.isLoggedIn,authController.protect, pageRouter.myorder)
+
+
+app.get('/getDistance', async (req, res) => {
+    try {
+      const pickupAddress = req.query.pickupAddress;
+      const dropOffAddress = req.query.dropOffAddress;
+      const googleapis = "AIzaSyDAh5_JZiyJUj0YJFbn4f7UGDZrBTuiem0"
+  
+      const response = await axios.get(
+        `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${dropOffAddress}&origins=${pickupAddress}&key=${googleapis}`
+      );
+  
+      res.json(response.data);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
 
 // When the Route is not There
 app.all('*', (req, res, next) => {

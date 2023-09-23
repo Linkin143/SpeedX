@@ -1,22 +1,35 @@
+function findDistance() {
+  const pickupAddress = $('#myPickUpAddress').val();
+  const dropOffAddress = $('#myDropOffAddress').val();
+  console.error(pickupAddress, dropOffAddress);
 
-    function findDistance(){
-        pickupAddress = $('#myPickUpAddress').val()
-        dropOffAddress = $('#myDropOffAddress').val();
-        console.error(pickupAddress, dropOffAddress)
-        axios
-        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-        axios
-          .get(`${proxyUrl}https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${dropOffAddress}&origins=${pickupAddress}&key=AIzaSyDAh5_JZiyJUj0YJFbn4f7UGDZrBTuiem0`)
-          .then(function (response) {
-            // handle success
-            console.log(response);
-            distance = response.data.rows[0].elements[0].distance.text;
-            $("#distance").text(distance)
-            var expectedPrice = parseInt(distance, 10)
-            $("#expectedPrice").text("   Rs "+(expectedPrice*300))
-          })
-          .catch(function (error) {
-            // handle error
-            console.log(error);
-          })
-    }
+  // Define the headers
+  const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+  };
+
+  // Define the query parameters
+  const params = {
+    pickupAddress,
+    dropOffAddress,
+  };
+
+  axios
+    .get(`/getDistance`, {
+      headers, // Add the headers here
+      params, // Add the query parameters here
+    })
+    .then(function (response) {
+      // handle success
+      console.log(response);
+      const distance = response.data.rows[0].elements[0].distance.text;
+      $("#distance").text(distance);
+      const expectedPrice = parseFloat(distance.split(" ")[0].replace(',', '')) * 300;
+      $("#expectedPrice").text("   Rs "+ expectedPrice);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
+}
