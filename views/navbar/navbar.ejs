@@ -1,0 +1,146 @@
+    <!-- navigation bar start  -->
+
+
+    <div class="main-div" id="main-nav-div">
+
+        <ul type="none" class="nav-item">
+            <nav class="navbar">
+                <a href=<%- logo -%>>
+                    <p>
+                        <h1> <img src="images/SpeedX_free_file1.webp" alt="" class="company-logo"> </h1>
+                    </p>
+
+                </a>
+
+            </nav>
+            <li><a href="">Home</a></li>
+            <li>
+                <label for="services"></label>
+                <select name="submenu" id="submenu" onclick="window.location.href=this.value;">
+
+                    <option disabled selected value="#">Services</option>
+                    <option value="/service">Daily Transportation</option>
+                    <option value="/service">Packer's & Mover's </option>
+                    <option value="/service">Logistics Services</option>
+
+                </select>
+
+
+
+
+
+            </li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#">Blog</a></li>
+            <!-- <li><a href="#">Media</a></li> -->
+            <li><a href="/about">About&nbsp;Us</a></li>
+            <li><a href="/help">Help</a></li>
+
+            <li><a href="#"></a></li>
+            <% if (user) { %>
+                <li class="profile" id="profile-id"><a href="#">
+                        <img src="images/userImage.webp" alt="lol" onclick="toggleMenu()">
+                    </a>
+                </li>
+                <% } else { %>
+                    <li class="home-signIn" id="Signin-id"><a href="/signin">Log&nbsp;In/Sign&nbsp;Up</a></li>
+                    <% } %>
+        </ul>
+        <!-- code for side profile  -->
+        <div class="profile-submenu-wrap" id="subMenu">
+            <div class="profile-submenu">
+                <div class="profile-userinfo">
+                    <img src="images/userImage.webp" alt="">
+                    <% if (user) { %>
+                        <h1>Welcome, <%= user.name %>
+                        </h1>
+                        <!-- Display other user properties as needed -->
+                        <% } else { %>
+                            <h1>Welcome, Guest</h1>
+                            <!-- Display a default message or empty values -->
+                            <% } %>
+                </div>
+                <hr>
+
+                <a href="/myprofile" class="profile-submenu-link">
+                    <img src="images/editProfile.webp" alt="">
+                    <p class="profile-submenu-link-text">My Profile</p>
+                    <span class="profile-submenu-link-text">></span>
+                </a>
+                <a href="/Help.html" class="profile-submenu-link">
+                    <img src="images/ProfileHelp.webp" alt="">
+                    <p class="profile-submenu-link-text">Help & Support</p>
+                    <span class="profile-submenu-link-text">></span>
+                </a>
+                <button class="profile-submenu-link" onclick="logout()">
+                    <img src="images/logoutImage.webp" alt="">
+                    <p id="logout-user" class="profile-submenu-link-text">Log Out</p>
+                    <span class="profile-submenu-link-text">></span>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- navigation bar end  -->
+
+    <!-- mobile navigation bar start -->
+    <div class="main-mobile-nav">
+        <div id="mySidebar" class="sidebar">
+            <div class="cross-menu">
+                <div class="multiply-menuicon crossItem-1">
+                    <% if (user) { %>
+                        <h1>Welcome, <%= user.name %>
+                        </h1>
+                        <!-- Display other user properties as needed -->
+                        <% } else { %>
+                            <h1>Welcome, Guest</h1>
+                            <!-- Display a default message or empty values -->
+                            <% } %>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                </div>
+
+            </div>
+            <a href="">Home</a>
+            <% if (user) { %>
+            <a href="/myprofile">MyProfile</a>
+            <% }%>
+            <div class="dropdown">
+                <a class="dropbtn" href="/service">Services</a>
+                <div class="dropdown-content">
+                    <a href="/service">Daily Transportation</a>
+                    <a href="/service">Packer's & Mover's </a>
+                    <a href="/service">Logistics Services</a>
+                </div>
+            </div>
+            <a href="#">Blog</a>
+            <a href="/about">About Us</a>
+            <a href="/help">Help</a>
+            <% if (user) { %>
+            <a onclick="logout()">Logout</a>
+            <% } %>
+        </div>
+
+        <div class="main-sidebar-nav" id="main">
+            <div class="main-sidebar-nav-item sidebar-1">
+                <a class="openbtn" onclick="openNav()">&#9776;</a>
+            </div>
+            <div class="main-sidebar-nav-item sidebar-2">
+                <a href=""> <img src="images/SpeedX_free_file1.webp" alt=""></a>
+            </div>
+            <div class="main-sidebar-nav-item sidebar-3">
+              <a href="/signin">
+                <h1>Login|SignUp</h1>
+
+              </a>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <!-- mobile navigation bar end -->

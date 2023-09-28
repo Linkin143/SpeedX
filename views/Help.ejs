@@ -21,142 +21,7 @@
 
 <body>
 
-      <!-- navigation bar start  -->
-
-
-      <div class="main-div" id="main-nav-div">
-
-        <ul type="none" class="nav-item">
-            <nav class="navbar">
-                <a href="/">
-                    <p>
-                        <h1> <img src="images/SpeedX_free_file1.png" alt="" class="company-logo"> </h1>
-                    </p>
-
-                </a>
-
-            </nav>
-            <li><a href="/">Home</a></li>
-            <li>
-                <label for="services"></label>
-                <select name="submenu" id="submenu" onclick="window.location.href=this.value;">
-
-                    <option disabled selected value="#">Services</option>
-                    <option value="service.html">Daily Transportation</option>
-                    <option value="service.html">Packer's & Mover's </option>
-                    <option value="service.html">Logistics Services</option>
-
-                </select>
-
-
-
-
-
-            </li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#">Blog</a></li>
-            <!-- <li><a href="#">Media</a></li> -->
-            <li><a href="/about">About&nbsp;Us</a></li>
-            <li><a href="/help">Help</a></li>
-
-            <li><a href="#"></a></li>
-            <% if (user) { %>
-                <li class="profile" id="profile-id"><a href="#">
-                        <img src="images/userImage.png" alt="lol" onclick="toggleMenu()">
-                    </a>
-                </li>
-                <% } else { %>
-                    <li class="home-signIn" id="Signin-id"><a href="/signin">Log&nbsp;In/Sign&nbsp;Up</a></li>
-                    <% } %>
-        </ul>
-        <!-- code for side profile  -->
-        <div class="profile-submenu-wrap" id="subMenu">
-            <div class="profile-submenu">
-                <div class="profile-userinfo">
-                    <img src="images/userImage.png" alt="">
-                    <% if (user) { %>
-                        <h1>Welcome, <%= user.name %>
-                        </h1>
-                        <!-- Display other user properties as needed -->
-                        <% } else { %>
-                            <h1>Welcome, Guest</h1>
-                            <!-- Display a default message or empty values -->
-                            <% } %>
-                </div>
-                <hr>
-
-                <a href="/myprofile" class="profile-submenu-link">
-                    <img src="images/editProfile.png" alt="">
-                    <p class="profile-submenu-link-text">My Profile</p>
-                    <span class="profile-submenu-link-text">></span>
-                </a>
-                <a href="/Help.html" class="profile-submenu-link">
-                    <img src="images/ProfileHelp.png" alt="">
-                    <p class="profile-submenu-link-text">Help & Support</p>
-                    <span class="profile-submenu-link-text">></span>
-                </a>
-                <button class="profile-submenu-link" onclick="logout()">
-                    <img src="images/logoutImage.png" alt="">
-                    <p id="logout-user" class="profile-submenu-link-text">Log Out</p>
-                    <span class="profile-submenu-link-text">></span>
-                </button>
-
-            </div>
-        </div>
-
-    </div>
-
-    <!-- navigation bar end  -->
-
-     <!-- mobile navigation bar start -->
-     <div class="main-mobile-nav">
-        <div id="mySidebar" class="sidebar">
-            <div class="cross-menu">
-                <div class="multiply-menuicon crossItem-1">
-                    <h3>Welcome,</h3>
-                    <h2>Prince Kumar</h2>
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-                </div>
-
-            </div>
-            <a href="">Home</a>
-            <a href="/myprofile">MyProfile</a>
-            <div class="dropdown">
-                <a class="dropbtn" href="/service">Services</a>
-                <div class="dropdown-content">
-                    <a href="/service">Daily Transportation</a>
-                    <a href="/service">Packer's & Mover's </a>
-                    <a href="/service">Logistics Services</a>
-                </div>
-            </div>
-            <a href="#">Blog</a>
-            <a href="/about">About Us</a>
-            <a href="/help">Help</a>
-            <a href="#">Logout</a>
-        </div>
-
-        <div class="main-sidebar-nav" id="main">
-            <div class="main-sidebar-nav-item sidebar-1">
-                <a class="openbtn" onclick="openNav()">&#9776;</a>
-            </div>
-            <div class="main-sidebar-nav-item sidebar-2">
-                <a href=""> <img src="images/SpeedX_free_file1.png" alt=""></a>
-            </div>
-            <div class="main-sidebar-nav-item sidebar-3">
-              <a href="/signin">
-                <h1>Login|SignUp</h1>
-
-              </a>
-            </div>
-
-
-
-
-        </div>
-    </div>
-    <!-- mobile navigation bar end -->
+    <%- include('./navbar/navbar.ejs', {logo: '../'}) -%>
 
 
     <!-- Help Center start ------------------------------------------------------------ -->
@@ -171,7 +36,7 @@
         </div>
         <div class="help-item item2">
             <div class="help-flex-box help-box1">
-                <img src="/images/help2.png" alt="">
+                <img src="/images/help2.webp" alt="">
             </div>
             <div class="help-flex-box help-box2">
                 <h2>CUSTOMER SUPPORT</h2>
@@ -183,7 +48,7 @@
         </div>
         <div class="help-item item3">
             <div class="help-flex-box help-box1">
-                <img src="/images/help3.png" alt="">
+                <img src="/images/help3.webp" alt="">
             </div>
             <div class="help-flex-box help-box2">
                 <h2>HOUSE SHIFTING SERVICE</h2>
@@ -200,7 +65,7 @@
         </div>
         <div class="help-item item4">
             <div class="help-flex-box help-box1">
-                <img src="/images/help4.png" alt="">
+                <img src="/images/help4.webp" alt="">
             </div>
             <div class="help-flex-box help-box2">
                 <h2>DRIVER SUPPORT
@@ -214,7 +79,7 @@
         </div>
         <div class="help-item item5">
             <div class="help-flex-box help-box1">
-                <img src="/images/help5.png" alt="">
+                <img src="/images/help5.webp" alt="">
             </div>
             <div class="help-flex-box help-box2">
                 <h2>ENTERPRISES & WHOLESALER HELP</h2>
@@ -278,7 +143,7 @@
             <section class="horizontal-footer-section" id="footer-top-section">
                 <div id="footer-logo">
                     <picture>
-                        <a href="/"><img src="images/SpeedX_free_file2.png" alt="footer logo" role="presentation"></a>
+                        <a href="/"><img src="images/SpeedX_free_file2.webp" alt="footer logo" role="presentation"></a>
                     </picture>
                 </div>
 
@@ -288,13 +153,13 @@
                 <div id="footer-about" class="footer-columns footer-columns-large">
                     <h1>Our Address</h1>
                     <address>
-                        <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/marker.png">Vanjar Umar Road,
+                        <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/marker.webp">Vanjar Umar Road,
                             Gondegaon Jalna,Maharashtra,India
                             Pin-431213</p>
-                        <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/phone.png">+91 (983) 400–10–79</p>
-                        <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/mail.png">wagharjun609@gmail.com
+                        <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/phone.webp">+91 (983) 400–10–79</p>
+                        <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/mail.webp">wagharjun609@gmail.com
                         </p>
-                        <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/clock.png">8:00 AM – 8:00 PM</p>
+                        <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/clock.webp">8:00 AM – 8:00 PM</p>
                     </address>
                     <h1> Our Newsletter</h1>
                     <a href="#" class="footer-button" role="button">Subscribe</a>
@@ -351,10 +216,10 @@
                     &copy; SpeedX Inc. 2023. All rights reserved.
                 </div>
                 <div id="footer-social-buttons">
-                    <img src="https://img.icons8.com/ios-filled/25/999999/facebook--v1.png" />
-                    <img src="https://img.icons8.com/ios-filled/25/999999/telegram-app.png" />
-                    <img src="https://img.icons8.com/ios-filled/25/999999/pinterest--v1.png" />
-                    <img src="https://img.icons8.com/ios-filled/25/999999/instagram--v1.png" />
+                    <img src="https://img.icons8.com/ios-filled/25/999999/facebook--v1.webp" />
+                    <img src="https://img.icons8.com/ios-filled/25/999999/telegram-app.webp" />
+                    <img src="https://img.icons8.com/ios-filled/25/999999/pinterest--v1.webp" />
+                    <img src="https://img.icons8.com/ios-filled/25/999999/instagram--v1.webp" />
                 </div>
             </section>
 

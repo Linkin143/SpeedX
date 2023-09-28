@@ -12,174 +12,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap" rel="stylesheet">
     <!-- Mobile Responsive -->
     <link rel="stylesheet" media="screen and (max-width:730px)" href="phone.css">
-
+    
     <link rel="stylesheet" href="speedx.css">
     <!-- <link rel="stylesheet" href="speedx.scss"> -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-    <!-- <script src="https://apis.mappls.com/advancedmaps/api/2215d1d690e70b73e67757e7a4207f72/map_sdk?layer=vector&v=3.0&callback=initMap1"></script> -->
-    <!-- <script src="https://apis.mappls.com/advancedmaps/api/2215d1d690e70b73e67757e7a4207f72/map_sdk_plugins?v=3.0"></script> -->
-   
-    <!-- <style>
-        body { margin: 0; }
-        #map {width: 600px; height: 400px;margin: 0; padding: 0; }
-        #watermark_logo0 {display: none;}
-        div .tracking-map-navigation img {display: none;}
-        .mapboxgl-ctrl-top-left {display: none;}
-    </style>  -->
+    <script src="https://apis.mappls.com/advancedmaps/api/2215d1d690e70b73e67757e7a4207f72/map_sdk?layer=vector&v=3.0&callback=initMap1"></script>
+    <script src="https://apis.mappls.com/advancedmaps/api/2215d1d690e70b73e67757e7a4207f72/map_sdk_plugins?v=3.0"></script>
 
-    <!-- <script src="https://apis.mappls.com/advancedmaps/api/1c4d023b-0456-44c1-9fba-00243e63b6ab/map_sdk_plugins?v=3.0&libraries=getPinDetails"></script> -->
+
+   <script src="https://apis.mappls.com/advancedmaps/api/1c4d023b-0456-44c1-9fba-00243e63b6ab/map_sdk_plugins?v=3.0&libraries=getPinDetails"></script>
 
 </head>
 
 <body>
-    <!-- navigation bar start  -->
-
-
-    <div class="main-div" id="main-nav-div">
-
-        <ul type="none" class="nav-item">
-            <nav class="navbar">
-                <a href="">
-                    <p>
-                        <h1> <img src="images/SpeedX_free_file1.png" alt="" class="company-logo"> </h1>
-                    </p>
-
-                </a>
-
-            </nav>
-            <li><a href="">Home</a></li>
-            <li>
-                <label for="services"></label>
-                <select name="submenu" id="submenu" onclick="window.location.href=this.value;">
-
-                    <option disabled selected value="#">Services</option>
-                    <option value="/service">Daily Transportation</option>
-                    <option value="/service">Packer's & Mover's </option>
-                    <option value="/service">Logistics Services</option>
-
-                </select>
-
-
-
-
-
-            </li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#">Blog</a></li>
-            <!-- <li><a href="#">Media</a></li> -->
-            <li><a href="/about">About&nbsp;Us</a></li>
-            <li><a href="/help">Help</a></li>
-
-            <li><a href="#"></a></li>
-            <% if (user) { %>
-                <li class="profile" id="profile-id"><a href="#">
-                        <img src="images/userImage.png" alt="lol" onclick="toggleMenu()">
-                    </a>
-                </li>
-                <% } else { %>
-                    <li class="home-signIn" id="Signin-id"><a href="/signin">Log&nbsp;In/Sign&nbsp;Up</a></li>
-                    <% } %>
-        </ul>
-        <!-- code for side profile  -->
-        <div class="profile-submenu-wrap" id="subMenu">
-            <div class="profile-submenu">
-                <div class="profile-userinfo">
-                    <img src="images/userImage.png" alt="">
-                    <% if (user) { %>
-                        <h1>Welcome, <%= user.name %>
-                        </h1>
-                        <!-- Display other user properties as needed -->
-                        <% } else { %>
-                            <h1>Welcome, Guest</h1>
-                            <!-- Display a default message or empty values -->
-                            <% } %>
-                </div>
-                <hr>
-
-                <a href="/myprofile" class="profile-submenu-link">
-                    <img src="images/editProfile.png" alt="">
-                    <p class="profile-submenu-link-text">My Profile</p>
-                    <span class="profile-submenu-link-text">></span>
-                </a>
-                <a href="/Help.html" class="profile-submenu-link">
-                    <img src="images/ProfileHelp.png" alt="">
-                    <p class="profile-submenu-link-text">Help & Support</p>
-                    <span class="profile-submenu-link-text">></span>
-                </a>
-                <button class="profile-submenu-link" onclick="logout()">
-                    <img src="images/logoutImage.png" alt="">
-                    <p id="logout-user" class="profile-submenu-link-text">Log Out</p>
-                    <span class="profile-submenu-link-text">></span>
-                </button>
-
-            </div>
-        </div>
-
-    </div>
-
-    <!-- navigation bar end  -->
-
-    <!-- mobile navigation bar start -->
-    <div class="main-mobile-nav">
-        <div id="mySidebar" class="sidebar">
-            <div class="cross-menu">
-                <div class="multiply-menuicon crossItem-1">
-                    <% if (user) { %>
-                        <h1>Welcome, <%= user.name %>
-                        </h1>
-                        <!-- Display other user properties as needed -->
-                        <% } else { %>
-                            <h1>Welcome, Guest</h1>
-                            <!-- Display a default message or empty values -->
-                            <% } %>
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-
-                </div>
-
-            </div>
-            <a href="">Home</a>
-            <% if (user) { %>
-            <a href="/myprofile">MyProfile</a>
-            <% }%>
-            <div class="dropdown">
-                <a class="dropbtn" href="/service">Services</a>
-                <div class="dropdown-content">
-                    <a href="/service">Daily Transportation</a>
-                    <a href="/service">Packer's & Mover's </a>
-                    <a href="/service">Logistics Services</a>
-                </div>
-            </div>
-            <a href="#">Blog</a>
-            <a href="/about">About Us</a>
-            <a href="/help">Help</a>
-            <% if (user) { %>
-            <a onclick="logout()">Logout</a>
-            <% } %>
-        </div>
-
-        <div class="main-sidebar-nav" id="main">
-            <div class="main-sidebar-nav-item sidebar-1">
-                <a class="openbtn" onclick="openNav()">&#9776;</a>
-            </div>
-            <div class="main-sidebar-nav-item sidebar-2">
-                <a href=""> <img src="images/SpeedX_free_file1.png" alt=""></a>
-            </div>
-            <div class="main-sidebar-nav-item sidebar-3">
-              <a href="/signin">
-                <h1>Login|SignUp</h1>
-
-              </a>
-            </div>
-
-
-
-
-        </div>
-    </div>
-    <!-- mobile navigation bar end -->
+    <%- include('./navbar/navbar.ejs', {logo: '/'}) -%>
 
     <!-- Main-Image start -->
     <div class="main-image">
@@ -292,7 +140,7 @@
             </div>
         </div>
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
-        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script>
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script> 
 
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.2/gsap.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.2/CSSRulePlugin.min.js"></script> -->
@@ -309,8 +157,7 @@
         </div>
         <div class="tracking-container">
             <div class="tracking-map-navigation">
-                <!-- <div id="map"></div> -->
-                <!-- <img src="/static/images/driver.png" alt=""> -->
+                <div id="map"></div>
             </div>
             <div class="tracking-map-navigation-item">
                 <div class="tracking-heading tracking-item1">
@@ -332,9 +179,8 @@
                                     <h2>PickUp Address:</h2>
                     </label>
                     <div>
-                        <input type="text" name="myAddress" id="myPickUpAddress" required
+                        <input type="text" name="myAddress" id="myPickUpAddress" onchange="findDistance()" required
                             placeholder="Enter PickUp Address">
-                        <input type="text" id="pickupOrdinates" style="display: none;">
 
                     </div>
 
@@ -345,7 +191,6 @@
                     </label>
                     <div> <input type="text" name="myAddress" id="myDropOffAddress" required
                             placeholder="Enter DropOff Address" onchange="findDistance()" >
-                            <input type="text" id="dropoffOrdinates" style="display: none;">
                     </div>
                 </div>
                 <div class="tracking-heading tracking-item3">
@@ -404,7 +249,7 @@
 
             <div class="service-item service-item1">
                 <div class="service-image service-image1" id="service-id-image1">
-                    <img src="images/logistics.jpg" alt="Daily transportation">
+                    <img src="images/logistics.webp" alt="Daily transportation">
                 </div>
                 <div class="service-text">
                     <h2>Daily Transportation</h2>
@@ -422,7 +267,7 @@
             </div>
             <div class="service-item service-item2">
                 <div class="service-image service-image2">
-                    <img src="images/package.png" alt="Packers and movers">
+                    <img src="images/package.webp" alt="Packers and movers">
                 </div>
                 <div class="service-text">
                     <h2>Packer's & Mover's</h2>
@@ -434,7 +279,7 @@
             </div>
             <div class="service-item service-item3">
                 <div class="service-image service-image2">
-                    <img src="images/enterprises.jpg" alt="Enterprises Delivery">
+                    <img src="images/enterprises.webp" alt="Enterprises Delivery">
                 </div>
                 <div class="service-text">
                     <h2>Logistics Services</h2>
@@ -475,7 +320,7 @@
 
                                     <div class="col-lg-5 col-md-5">
 
-                                        <img class="card-img-top" src="images/budgetFriendly.png" alt="Card image cap"
+                                        <img class="card-img-top" src="images/budgetFriendly.webp" alt="Card image cap"
                                             googl="true">
                                     </div>
                                     <div class="col-lg-7 col-md-7">
@@ -504,7 +349,7 @@
 
                                     <div class="col-lg-5 col-md-5">
 
-                                        <img class="card-img-top" src="images/QuickDelivery.png" alt="Card image cap">
+                                        <img class="card-img-top" src="images/QuickDelivery.webp" alt="Card image cap">
                                     </div>
                                     <div class="col-lg-7 col-md-7">
                                         <div class="card-body">
@@ -530,7 +375,7 @@
 
                                     <div class="col-lg-5 col-md-5">
 
-                                        <img class="card-img-top" src="images/GPSTracking.png" alt="Card image cap">
+                                        <img class="card-img-top" src="images/GPSTracking.webp" alt="Card image cap">
                                     </div>
                                     <div class="col-lg-7 col-md-7">
                                         <div class="card-body">
@@ -555,7 +400,7 @@
 
                                     <div class="col-lg-5 col-md-5">
 
-                                        <img class="card-img-top" src="images/InsuredDelivery2.png"
+                                        <img class="card-img-top" src="images/InsuredDelivery2.webp"
                                             alt="Card image cap">
                                     </div>
                                     <div class="col-lg-7 col-md-7">
@@ -614,7 +459,7 @@
         <div class="benefits-maindiv">
             <div class="counter-container benefits-box1">
                 <div class="benefit-img">
-                    <img src="images/Network.png" alt="">
+                    <img src="images/Network.webp" alt="">
                 </div>
 
                 <div class="counter" data-target="4000"></div>
@@ -624,7 +469,7 @@
             </div>
             <div class="counter-container benefits-box2">
                 <div class="benefit-img">
-                    <img src="images/driver.png" alt="">
+                    <img src="images/driver.webp" alt="">
                 </div>
 
                 <div class="counter" data-target="8000"></div>
@@ -634,7 +479,7 @@
             </div>
             <div class="counter-container benefits-box3">
                 <div class="benefit-img">
-                    <img src="images/happyclients.png" alt="">
+                    <img src="images/happyclients.webp" alt="">
                 </div>
                 <div class="counter" data-target="15000"></div>
                 <span>
@@ -643,7 +488,7 @@
             </div>
             <div class="counter-container benefits-box4">
                 <div class="benefit-img">
-                    <img src="images/Locations.png" alt="">
+                    <img src="images/Locations.webp" alt="">
                 </div>
                 ''
                 <div class="counter" data-target="500"></div>
@@ -871,7 +716,7 @@
                 <section class="horizontal-footer-section" id="footer-top-section">
                     <div id="footer-logo">
                         <picture>
-                            <a href=""><img src="images/SpeedX_free_file2.png" alt="footer logo"
+                            <a href=""><img src="images/SpeedX_free_file2.webp" alt="footer logo"
                                     role="presentation"></a>
                         </picture>
                     </div>
@@ -882,13 +727,13 @@
                     <div id="footer-about" class="footer-columns footer-columns-large">
                         <h1>Our Address</h1>
                         <address>
-                            <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/marker.png">Vanjar Umar Road,
+                            <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/marker.webp">Vanjar Umar Road,
                                 Gondegaon Jalna,Maharashtra,India
                                 Pin-431213</p>
-                            <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/phone.png">+91 (983) 400–10–79</p>
-                            <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/mail.png">wagharjun609@gmail.com
+                            <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/phone.webp">+91 (983) 400–10–79</p>
+                            <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/mail.webp">wagharjun609@gmail.com
                             </p>
-                            <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/clock.png">8:00 AM – 8:00 PM</p>
+                            <p><img src="https://img.icons8.com/ios-filled/14/eeeeee/clock.webp">8:00 AM – 8:00 PM</p>
                         </address>
                         <h1> Our Newsletter</h1>
                         <a href="#" class="footer-button" role="button">Subscribe</a>
@@ -945,10 +790,10 @@
                         &copy; SpeedX Inc. 2023. All rights reserved.
                     </div>
                     <div id="footer-social-buttons">
-                        <img src="https://img.icons8.com/ios-filled/25/999999/facebook--v1.png" />
-                        <img src="https://img.icons8.com/ios-filled/25/999999/telegram-app.png" />
-                        <img src="https://img.icons8.com/ios-filled/25/999999/pinterest--v1.png" />
-                        <img src="https://img.icons8.com/ios-filled/25/999999/instagram--v1.png" />
+                        <img src="https://img.icons8.com/ios-filled/25/999999/facebook--v1.webp" />
+                        <img src="https://img.icons8.com/ios-filled/25/999999/telegram-app.webp" />
+                        <img src="https://img.icons8.com/ios-filled/25/999999/pinterest--v1.webp" />
+                        <img src="https://img.icons8.com/ios-filled/25/999999/instagram--v1.webp" />
                     </div>
                 </section>
 
@@ -965,6 +810,7 @@
         <script src="login.js"></script>
         <script src="speedx.js"></script>
         <script src="maps/distance.js"></script>
+        <script src="maps/map.js"></script>
         <!-- <script src="maps/suggestAddress.js"></script> -->
 </body>
 

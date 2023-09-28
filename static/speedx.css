@@ -65,7 +65,7 @@ header .logo {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(./images/LandingPage.jpg);
+  background-image: url(./images/LandingPage.webp);
   background-size: contain;
   opacity: 0.7;
   /* mix-blend-mode: overlay; */
@@ -333,6 +333,12 @@ html {
   html {
     font-size: 57%;
   }
+  #map {
+    width: 300px !important;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -497,35 +503,35 @@ html {
 }
 
 .slider .box1 {
-  background-image: url(./images/main-image1.jpg);
+  background-image: url(./images/main-image1.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .slider .box2 {
-  background-image: url(./images/main-image2.jpg);
+  background-image: url(./images/main-image2.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .slider .box3 {
-  background-image: url(./images/main-image3.jpg);
+  background-image: url(./images/main-images3.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .slider .box4 {
-  background-image: url(./images/main-image4.jpg);
+  background-image: url(./images/main-image4.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .slider .box5 {
-  background-image: url(./images/main-image8.jpg);
+  background-image: url(./images/main-images8.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -683,7 +689,7 @@ html {
 }
 
 div .tracking-map-navigation img{
-  /* background: url(/static/images/map.jpg); */
+  /* background: url(/static/images/map.webp); */
   width: 500px;
   height: 447px;
 }
@@ -991,7 +997,9 @@ body {
   width: 1000px;
 }
 
-
+#rp_0{
+  display: none;
+}
 
 
 
@@ -1047,6 +1055,21 @@ body {
 }
 
 
+#map {
+  width: 600px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+}
+#watermark_logo0 {
+  display: none;
+}
+div .tracking-map-navigation img {
+  display: none;
+}
+.mapboxgl-ctrl-top-left {
+  display: none;
+}
 
 
 
@@ -1059,7 +1082,7 @@ body {
   margin-top: 61px;
   position: absolute;
   background-color: rgb(238, 238, 238);
-  background-image: url(https://demo.proteusthemes.com/buildpress/wp-content/uploads/sites/16/2014/10/title-area-pattern.png);
+  background-image: url(https://demo.proteusthemes.com/buildpress/wp-content/uploads/sites/16/2014/10/title-area-pattern.webp);
   background-repeat: repeat;
   border-bottom: 1px solid rgb(215, 215, 215);
 
@@ -1985,7 +2008,7 @@ label span {
   line-height: 30px;
   margin-top: 418px;
   color: #777;
-  background-image: url(./images/quick-contact-bg-image.jpg);
+  background-image: url(./images/quick-contact-bg-image.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
