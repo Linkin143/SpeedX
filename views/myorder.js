@@ -91,6 +91,13 @@ const myOrders = async (userID) => {
       </table>
       
   </div>
+
+<div class="Payment-button">
+
+<button type="button" class="btn btn-outline-primary btn-lg">Pay Now</button>
+
+</div>
+
   <div class="SpeedX-bottom-sign">
       <h6 style="color: white; margin-left: 390px;">
       Taking you into great beyond!
