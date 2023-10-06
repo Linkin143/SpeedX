@@ -32,7 +32,7 @@ const bookingSchema = new mongoose.Schema(
         },
         status:{
             type: String,
-            default: 'Pending'
+            default: 'Waiting List'
         },
         userEmail:{
             type: String,
@@ -43,6 +43,14 @@ const bookingSchema = new mongoose.Schema(
         payment_method:{
             type: String,
             default: "Cash on Delivery"
+        },
+        payment_link:{
+            type: String,
+            default: "Delivery Not Approved"
+        },
+        payment_status:{
+            type: String,
+            default: "Pending"
         }
     }
 );

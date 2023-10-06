@@ -11,18 +11,31 @@ const myOrders = async (userID) => {
   console.log(i, loopRan);
 
   function Status() {
-    if(res.data.objects.bookings[i].status == "Pending")
+    if(res.data.objects.bookings[i].status === "Waiting List")
     {
-        return "<td style='color: orange'><b> Pending </b></td>"
+        return "<td style='color: orange'><b> Under Review </b></td>"
     }
-    else if(res.data.objects.bookings[i].status == "Approve"){
-        return "<td style='color: green'><b> Approve </b></td>"
+    else if(res.data.objects.bookings[i].status == "Accepted"){
+        return "<td style='color: green'><b> Accepted </b></td>"
     }
-    else if(res.data.objects.bookings[i].status == "Deny"){
-        return "<td style='color: red'><b> Deny </b></td>"
+    else if(res.data.objects.bookings[i].status == "Failed"){
+
+        return "<td style='color: red'><b> Failed </b></td>"
     }
   }
-
+function payment_link(){
+    
+    if (res.data.objects.bookings[i].payment_link === "Delivery Not Approved") {
+        return `<div class="Payment-button">
+                    <button type="button" disabled class="btn btn-outline-primary btn-lg ">Pay Online</button>
+                </div>`
+      }
+      else{
+        return `<div class="Payment-button">
+        <a href="${res.data.objects.bookings[i].payment_link}"><button type="button" class="btn btn-outline-primary btn-lg ">Pay Online</button></a>
+    </div>`
+    }
+}
   $('#myorderCards').append(`
   <div class="MyProfile-card">
   <div class="MyProfile-card-body">
@@ -91,12 +104,8 @@ const myOrders = async (userID) => {
       </table>
       
   </div>
-
-<div class="Payment-button">
-
-<button type="button" class="btn btn-outline-primary btn-lg">Pay Now</button>
-
-</div>
+   
+  ${payment_link()}
 
   <div class="SpeedX-bottom-sign">
       <h6 style="color: white; margin-left: 390px;">

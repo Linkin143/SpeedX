@@ -47,7 +47,7 @@ exports.BookingId = async (req, res) => {
   }
 
   exports.bookingApprove = async (req, res, next) => {
-      const Book = await Booking.findByIdAndUpdate(req.params.id, { status: 'Approve' }, {
+      const Book = await Booking.findByIdAndUpdate(req.params.id, { status: 'Accepted', payment_link: `${req.body.payment_link}` }, {
           new: true,
           runValidators: true
       });
@@ -68,7 +68,7 @@ exports.BookingId = async (req, res) => {
   
 
   exports.bookingDeny = async (req, res) => {
-    const Book = await Booking.findByIdAndUpdate(req.params.id, { status: 'Deny' }, {
+    const Book = await Booking.findByIdAndUpdate(req.params.id, { status: 'Failed' }, {
         new: true,
         runValidators: true
     });
