@@ -1,3 +1,5 @@
 node_modules
 \backend\node_modules
-.gitignore
+/config.env
+/node_modules
+/.env

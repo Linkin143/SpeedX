@@ -9,7 +9,11 @@ module.exports = class Email {
 
   async sendMail(templates) {
     const transporter = nodemailer.createTransport({
-      service: 'outlook',
+        service: "gmail",
+        host: "smtp.gmail.com",
+        port: 587,
+        type:"oauth2",
+        secure: false, // true for port 465, false for other ports
       auth: {
         user: `${process.env.Email_From}`,
         pass: `${process.env.Email_Pass}`
