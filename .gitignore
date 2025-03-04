@@ -1,5 +1,4 @@
-node_modules
-\backend\node_modules
-/config.env
 /node_modules
-/.env
+\backend\node_modules
+.env
+config.env
